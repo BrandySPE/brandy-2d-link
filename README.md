@@ -10,6 +10,9 @@ The core loop is intentionally simple: prepare sprite objects in Blender, create
 
 It is a save-triggered workflow, not brush-by-brush live streaming.
 
+- English tutorial: [https://youtu.be/seKdFcPqHf4]
+- Chinese tutorial: [https://youtu.be/-xTnPTlHHwc]
+
 ## What It Helps With
 
 Layered 2D assets in Blender often use many separate texture files. Editing them manually can become repetitive: find the right texture, open it, save it, return to Blender, refresh it, and keep the complete assembled asset in mind.
