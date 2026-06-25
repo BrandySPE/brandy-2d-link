@@ -10,6 +10,9 @@ The core loop is intentionally simple: prepare sprite objects in Blender, create
 
 It is a save-triggered workflow, not brush-by-brush live streaming.
 
+![Quick Demo 1](assets/brandy-2d-link-workflow-1.gif)
+![Quick Demo 2](assets/brandy-2d-link-workflow-2.gif)
+
 - English tutorial: [https://youtu.be/seKdFcPqHf4]
 - Chinese tutorial: [https://youtu.be/-xTnPTlHHwc]
 
