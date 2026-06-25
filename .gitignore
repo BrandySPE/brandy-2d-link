@@ -1,0 +1,11 @@
+*.zip
+*.py
+*.pyc
+*.pyo
+*.jsx
+blender_manifest.toml
+__pycache__/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
