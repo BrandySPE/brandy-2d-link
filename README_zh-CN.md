@@ -10,6 +10,9 @@ Brandy 2D Link 是一款 Windows x64 Blender 插件，面向需要同时使用 B
 
 这是“保存触发”的工作流，不是逐笔刷实时串流。
 
+- 中文教程: [https://youtu.be/-xTnPTlHHwc]
+- 英文教程: [https://youtu.be/seKdFcPqHf4]
+
 ## 它解决什么问题
 
 Blender 中的分层 2D 资产通常会使用多张独立贴图。手动编辑这些贴图时，经常需要反复寻找对应文件、打开、保存、回到 Blender、刷新，并同时记住完整资产的组合效果。
