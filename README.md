@@ -10,16 +10,15 @@ The core loop is intentionally simple: prepare sprite objects in Blender, create
 
 It is a save-triggered workflow, not brush-by-brush live streaming.
 
-- English tutorial: [https://youtu.be/seKdFcPqHf4]
-- Chinese tutorial: [https://youtu.be/-xTnPTlHHwc]
+- English tutorial: https://youtu.be/seKdFcPqHf4
+- Chinese tutorial: https://youtu.be/-xTnPTlHHwc
 
 Start Blender and Adobe Photoshop Workflow:
 ![Quick Demo 1](assets/brandy-2d-link-workflow-1.gif)
 Paint-Save-Reload:
 ![Quick Demo 2](assets/brandy-2d-link-workflow-2.gif)
 
-Get Brandy 2D Link on itch.io:
-https://brandyspe.itch.io/brandy-2d-link
+Get Brandy 2D Link on itch.io: https://brandyspe.itch.io/brandy-2d-link
 
 ## What It Helps With
 
