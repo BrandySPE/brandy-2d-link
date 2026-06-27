@@ -18,6 +18,9 @@ Start Blender and Adobe Photoshop Workflow:
 Paint-Save-Reload:
 ![Quick Demo 2](assets/brandy-2d-link-workflow-2.gif)
 
+Get Brandy 2D Link on itch.io:
+https://brandyspe.itch.io/brandy-2d-link
+
 ## What It Helps With
 
 Layered 2D assets in Blender often use many separate texture files. Editing them manually can become repetitive: find the right texture, open it, save it, return to Blender, refresh it, and keep the complete assembled asset in mind.
