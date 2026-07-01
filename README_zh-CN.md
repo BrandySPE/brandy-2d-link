@@ -13,10 +13,8 @@ Brandy 2D Link 是一款 Windows x64 Blender 插件，面向需要同时使用 B
 - 中文教程: https://youtu.be/-xTnPTlHHwc
 - 英文教程: https://youtu.be/seKdFcPqHf4
 
-在 itch.io 进行购买 / 下载：
-https://brandyspe.itch.io/brandy-2d-link
-在 Superhive 进行购买 / 下载：
-https://superhivemarket.com/products/brandy-2d-link
+- 在 itch.io 进行购买 / 下载：https://brandyspe.itch.io/brandy-2d-link
+- 在 Superhive 进行购买 / 下载：https://superhivemarket.com/products/brandy-2d-link
 
 ## 它解决什么问题
 
