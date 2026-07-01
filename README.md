@@ -18,6 +18,7 @@ Start Blender and Adobe Photoshop Workflow:
 Paint-Save-Reload:
 ![Quick Demo 2](assets/brandy-2d-link-workflow-2.gif)
 
+Get Brandy 2D Link on Superhive: https://superhivemarket.com/products/brandy-2d-link
 Get Brandy 2D Link on itch.io: https://brandyspe.itch.io/brandy-2d-link
 
 ## What It Helps With
