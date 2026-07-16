@@ -107,6 +107,6 @@ The official 2D Link add-on package is distributed under **GPL-3.0-or-later**. T
 
 ## Independent Product Notice
 
-2D Link is an independent product. It is not affiliated with, endorsed by, sponsored by, or officially connected to Blender Foundation, Adobe, Unity Technologies, Epic Games, Esoteric Software, or their products.
+2D Link is an independent product and is not affiliated with or endorsed by Blender Foundation, Adobe, or Esoteric Software. Blender, Adobe Photoshop, and Spine are trademarks of their respective owners.
 
 Blender is a trademark of Blender Foundation. Adobe and Photoshop are either registered trademarks or trademarks of Adobe in the United States and/or other countries. Unity is a trademark or registered trademark of Unity Technologies or its affiliates. Unreal Engine is a trademark or registered trademark of Epic Games, Inc. Spine is a trademark of Esoteric Software LLC.
