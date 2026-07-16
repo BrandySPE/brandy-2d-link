@@ -73,7 +73,7 @@ The exact tested matrix and purchase checks are listed in the [Compatibility and
 
 The 1.6.3 Windows x64 release was run through the same automated end-to-end QA suite across 30 combinations of six Blender versions and five Adobe Photoshop desktop versions.
 
-Each FULL run used a 39-part production-style asset and exercised release-build verification, asset import, project creation, linked PSD structure, automatic and manual texture refresh, dimension-mismatch protection, protected write-back failure, named-layer write-back, byte-exact Undo Last Merge, JSON export/import roundtrip, and PNG, TGA, and JPG refresh behavior.
+Each FULL run used a 39-part production-style asset and exercised release-build verification, asset import, project creation, linked PSD structure, automatic and manual texture refresh, dimension-mismatch protection, safe write-back rejection under an invalid document state, named-layer write-back, byte-exact Undo Last Merge, JSON export/import roundtrip, and PNG, TGA, and JPG refresh behavior.
 
 Four boundary configurations—the oldest and newest tested Photoshop versions paired with the oldest and newest tested Blender versions—also completed 20 serial Photoshop save–manual refresh cycles each. Across these 80 repeated cycles, no cycle failed and no geometry or Blender data-block drift was detected.
 
