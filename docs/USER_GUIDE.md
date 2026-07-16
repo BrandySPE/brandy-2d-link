@@ -17,7 +17,7 @@ The core project model is:
 3. Edit one project texture directly, or open the assembled linked PSD/PSB.
 4. Save the relevant file in Photoshop.
 5. Refresh individual textures with **Reload Textures** or **Auto Reload**.
-6. When full-asset artwork must be distributed across textures, use `Brandy | Merge Layers` and run the explicit write-back action from Blender.
+6. When full-asset artwork must be distributed across textures, use 'Brandy | Merge Layers' and run the explicit write-back action from Blender.
 
 The workflow is save-triggered. It does not stream individual brush strokes.
 
@@ -42,7 +42,7 @@ Active projects should remain on a normal local filesystem. Network shares, NAS 
 3. Open the upper-right menu and choose **Install from Disk**.
 4. Select the complete official ZIP.
 5. Enable **Brandy 2D Link**.
-6. In a 3D View, press `N` and open the **Brandy** tab.
+6. In a 3D View, press 'N' and open the **Brandy** tab.
 
 The panel title should show **Brandy 2D Link v1.6.3**.
 
@@ -66,11 +66,11 @@ Internal subdivisions are supported when the outer boundary remains rectangular.
 
 Use a normal Image Texture in the material's top-level node tree. A direct Base Color connection is the clearest setup. Image Texture nodes hidden inside arbitrary custom Shader Node Groups are not a documented source.
 
-Blender numeric suffixes such as `.001` are ignored for part matching. After suffix handling, each intended project identity must still be unique.
+Blender numeric suffixes such as '.001' are ignored for part matching. After suffix handling, each intended project identity must still be unique.
 
 Before creating the project:
 
-- save the `.blend` file;
+- save the '.blend' file;
 - save all source textures to stable local files;
 - apply any required texture-canvas resizing;
 - remove packed or unsaved image states from the intended workflow;
@@ -145,7 +145,7 @@ It is intended for a smoother paint–save–check loop. It is not a real-time b
 
 If Auto Reload does not update:
 
-- confirm that the edited file is inside the active project's `textures` folder;
+- confirm that the edited file is inside the active project's 'textures' folder;
 - confirm that the file name and location did not change;
 - confirm that the pixel dimensions are unchanged;
 - wait until Photoshop finishes saving;
@@ -161,15 +161,15 @@ Click **Open Linked Document in Photoshop** to open the assembled project docume
 
 The document contains three reserved root groups:
 
-- `Brandy | Linked Content` contains plugin-managed linked Smart Objects for the project textures.
-- `Brandy | Merge Layers` contains visible artwork prepared for explicit write-back.
-- `Brandy | Merged Layers` stores processed artwork after a successful write-back.
+- 'Brandy | Linked Content' contains plugin-managed linked Smart Objects for the project textures.
+- 'Brandy | Merge Layers' contains visible artwork prepared for explicit write-back.
+- 'Brandy | Merged Layers' stores processed artwork after a successful write-back.
 
 Do not rename, move, duplicate, replace, or reorganize these groups. Do not move, rotate, flip, distort, or relink the generated Smart Objects.
 
 Ordinary painting layers, references, notes, and temporary work may remain outside the reserved groups. Keep the reserved structure clean so validation can distinguish managed content from normal artwork.
 
-Saving the PSD/PSB saves the working document. Blender still reloads the individual files inside the project's `textures` folder.
+Saving the PSD/PSB saves the working document. Blender still reloads the individual files inside the project's 'textures' folder.
 
 ## 10. Full-Asset Painting and Write-Back
 
@@ -177,10 +177,10 @@ Use the linked document when seams, overlaps, alignment, or neighboring parts ne
 
 Prepare the artwork as follows:
 
-1. Create or paste each artwork layer directly inside `Brandy | Merge Layers`.
+1. Create or paste each artwork layer directly inside 'Brandy | Merge Layers'.
 2. Keep each intended layer visible.
-3. Give each layer exactly the same name as its target in `Brandy | Linked Content`.
-4. Do not use subgroups inside `Brandy | Merge Layers`.
+3. Give each layer exactly the same name as its target in 'Brandy | Linked Content'.
+4. Do not use subgroups inside 'Brandy | Merge Layers'.
 5. Keep the group at 100% opacity.
 6. Use Normal or Pass Through as the group blend mode.
 7. Save the PSD/PSB.
@@ -199,7 +199,7 @@ Then return to Blender:
 
 Before changing a target, 2D Link validates the project, linked document, reserved structure, target mapping, texture dimensions, file state, and operation state. It creates verified backups for the texture files involved.
 
-After a successful operation, the matching project textures are updated, processed artwork moves to `Brandy | Merged Layers`, the linked document is saved, and Blender attempts to refresh the affected images.
+After a successful operation, the matching project textures are updated, processed artwork moves to 'Brandy | Merged Layers', the linked document is saved, and Blender attempts to refresh the affected images.
 
 For strict pixel-level work, especially with soft transparent edges across overlapping parts, direct single-texture editing remains the most controlled method. Merge Layers is a context-painting and distribution workflow, not a replacement for careful per-texture pixel editing.
 
@@ -243,7 +243,7 @@ Do not close Blender or Photoshop during a project creation or write-back task. 
 
 ## 14. Reports and Recovery Tools
 
-The latest complete Operation Report is also stored in the Blender Text data-block `BRANDY_2D_LINK_Last_Report`.
+The latest complete Operation Report is also stored in the Blender Text data-block 'BRANDY_2D_LINK_Last_Report'.
 
 Recovery tools are not normal daily workflow buttons. Use them only when the panel or Operation Report identifies the relevant state.
 
