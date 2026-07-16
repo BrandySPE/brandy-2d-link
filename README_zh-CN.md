@@ -53,7 +53,7 @@
 
 主工作流要求平面矩形图像网格、矩形活动 UV、一致的 2D 平面朝向、唯一的部件基础名称，以及位于本地文件系统中的 PNG、TGA、JPG 或 JPEG 贴图。
 
-它不是泛用型 3D 贴图绘制或投射系统，不提供 Photoshop 内部面板，不直接导出到游戏引擎，也不是完整的 Spine 骨骼与动画导入器。
+本插件目前注于基于文件的多部件资产 2D 纹理往返操作，不支持通用的 3D 投影绘画、导出到游戏引擎、Photoshop 面板集成，也不支持完整的 Spine 骨架和动画导入。
 
 ## 基本要求
 
@@ -63,7 +63,7 @@
 - 位于普通本地文件系统中的项目目录
 - 文件式 PNG、TGA、JPG 或 JPEG 贴图
 
-2D Link 需要 Adobe Photoshop，但不包含 Photoshop。Photoshop 网页版、iPad 版、macOS、Linux、非 Adobe 图像编辑器，以及 Beta 或 Nightly 宿主版本，不属于 1.6.3 的正式支持矩阵。
+本插件需要在 Windows x64 上使用 Adobe Photoshop 桌面版。Photoshop 网页版、iPad 版、macOS、Linux、非 Adobe 图像编辑器，以及 Beta 或 Nightly 宿主版本都不在 1.6.3 的公开支持范围内。
 
 精确实测版本和购买前检查见[兼容性与购买检查清单](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md)。
 
