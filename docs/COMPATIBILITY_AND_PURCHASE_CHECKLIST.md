@@ -75,7 +75,7 @@ Internal mesh subdivisions are supported when the outer boundary remains rectang
 
 The documented material source is a normal Image Texture in the material's top-level node tree. Image Texture nodes hidden inside arbitrary custom Shader Node Groups are not a documented source.
 
-Blender numeric suffixes such as `.001` are ignored for part matching. Names must still resolve to clear unique project identities after that suffix handling.
+Blender’s standard three-digit duplicate suffixes, such as ".001", are removed when matching part names. Suffixes with a different format are not automatically removed. After suffix handling, every project part must still resolve to a unique name.
 
 Resize texture canvases before creating the 2D Link project. Pixel width and height must remain unchanged after linking.
 
