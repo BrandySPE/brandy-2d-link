@@ -25,7 +25,7 @@
 3. 在 Blender 中打开 **Edit > Preferences > Get Extensions** 或 **Extensions**，具体名称取决于 Blender 版本。
 4. 打开右上角菜单，选择 **Install from Disk**。
 5. 选择完整官方 ZIP，并启用 **Brandy 2D Link**。
-6. 在 3D View 中按 `N`，打开 **Brandy** 标签。
+6. 在 3D View 中按 'N'，打开 **Brandy** 标签。
 
 面板标题应显示 **Brandy 2D Link v1.6.3**。不要单独安装 Python 或 JSX 文件。
 
@@ -53,10 +53,10 @@
 - 部件使用平面矩形网格、矩形活动 UV 和一致的 2D 朝向；
 - 每个目标部件都有唯一的基础名称；
 - 材质顶层节点树中存在文件式 Image Texture；
-- `.blend` 文件已经保存；
+- '.blend' 文件已经保存；
 - 所有需要改变的贴图画布尺寸已在创建项目前调整完成。
 
-项目部件匹配会忽略 `.001` 这类 Blender 数字后缀。只要外边界保持矩形，内部网格细分可以存在。
+项目部件匹配会忽略 '.001' 这类 Blender 数字后缀。只要外边界保持矩形，内部网格细分可以存在。
 
 项目创建后，请保持每张项目贴图的像素宽高不变。
 
@@ -101,9 +101,9 @@ Blender 会重新载入项目图像文件，不会重建材质节点结构。
 
 关联文档包含三个保留根组：
 
-- `Brandy | Linked Content` — 表示项目贴图的关联智能对象；
-- `Brandy | Merge Layers` — 准备写回的可见作品；
-- `Brandy | Merged Layers` — 成功写回后存放已处理作品。
+- 'Brandy | Linked Content' — 表示项目贴图的关联智能对象；
+- 'Brandy | Merge Layers' — 准备写回的可见作品；
+- 'Brandy | Merged Layers' — 成功写回后存放已处理作品。
 
 不要重命名、移动、复制、替换或重新组织这些保留组。不要移动、旋转、翻转、扭曲或重新链接生成的智能对象。
 
@@ -111,22 +111,22 @@ Blender 会重新载入项目图像文件，不会重建材质节点结构。
 
 ## 8. 将作品写回贴图
 
-1. 在 `Brandy | Merge Layers` 中直接创建或粘贴作品图层。
+1. 在 'Brandy | Merge Layers' 中直接创建或粘贴作品图层。
 2. 保持每个作品图层可见。
-3. 将每个图层命名为 `Brandy | Linked Content` 中对应目标的精确名称。
+3. 将每个图层命名为 'Brandy | Linked Content' 中对应目标的精确名称。
 4. 图层必须直接位于该组内，不要使用子组。
-5. 保持 `Brandy | Merge Layers` 为 100% 不透明度。
+5. 保持 'Brandy | Merge Layers' 为 100% 不透明度。
 6. 组混合模式使用 **Normal** 或 **Pass Through**。
 7. 保存 PSD/PSB。
 8. 回到 Blender，确认活动项目正确。
 9. 点击 **Apply “Merge Layers” to Source Textures**。
 10. 出现警告时先阅读，再等待 Photoshop 和 Blender 完成任务。
 
-名称匹配区分大小写。最安全的方法是直接从 `Brandy | Linked Content` 复制目标名称。
+名称匹配区分大小写。最安全的方法是直接从 'Brandy | Linked Content' 复制目标名称。
 
 作品跨越多个部件时，为每个目标复制一份相关作品，并分别使用对应目标名称。写回期间，每个匹配图层会映射到目标贴图，超出目标画布的像素会被裁切。
 
-修改文件前，2D Link 会验证关联文档和目标贴图，并为本次操作涉及的文件建立备份。成功写回后，匹配的项目贴图会更新，已处理作品会移到 `Brandy | Merged Layers`，关联文档会保存，Blender 会尝试刷新受影响图像。
+修改文件前，2D Link 会验证关联文档和目标贴图，并为本次操作涉及的文件建立备份。成功写回后，匹配的项目贴图会更新，已处理作品会移到 'Brandy | Merged Layers'，关联文档会保存，Blender 会尝试刷新受影响图像。
 
 对于严格像素级工作，尤其是重叠部件之间的柔和透明边缘，直接编辑单张贴图仍然最可控。
 
@@ -157,7 +157,7 @@ Blender 会重新载入项目图像文件，不会重建材质节点结构。
 
 ### 保存贴图后 Blender 没有更新
 
-- 确认编辑的是活动项目 `textures` 目录中的贴图。
+- 确认编辑的是活动项目 'textures' 目录中的贴图。
 - 在保存前启用 Auto Reload，或点击 **Reload Textures**。
 - 确认 Photoshop 没有把文件另存到新名称或新位置。
 - 确认像素尺寸没有改变。
@@ -166,15 +166,15 @@ Blender 会重新载入项目图像文件，不会重建材质节点结构。
 ### Merge Layers 没有应用
 
 - 先保存 PSD/PSB。
-- 将可见作品图层直接放在 `Brandy | Merge Layers` 中。
+- 将可见作品图层直接放在 'Brandy | Merge Layers' 中。
 - 移除子组。
-- 从 `Brandy | Linked Content` 复制精确目标名称。
+- 从 'Brandy | Linked Content' 复制精确目标名称。
 - 保持目标贴图尺寸不变。
 - 保持 Merge Layers 组为 100% 不透明度，并使用 Normal 或 Pass Through 混合模式。
 
 ## 11. 报告、恢复与下一步
 
-操作失败时，展开 **Photoshop Settings**，点击 **Open Operation Report**。最近一次完整报告也会保存到 Blender Text 数据块 `BRANDY_2D_LINK_Last_Report`。
+操作失败时，展开 **Photoshop Settings**，点击 **Open Operation Report**。最近一次完整报告也会保存到 Blender Text 数据块 'BRANDY_2D_LINK_Last_Report'。
 
 Photoshop 仍可能写入文件时，不要手动删除项目锁、任务状态、备份记录或恢复标记。只有 Operation Report 建议时才使用恢复工具。
 
