@@ -82,15 +82,7 @@ Additional supervised testing covered a 39-part production-style character asset
 - [Release Notes](docs/RELEASE_NOTES.md) — current package notes and unchanged workflow boundaries.
 - [Superhive FAQ](https://superhivemarket.com/products/brandy-2d-link/faq) — concise answers to common pre-purchase questions.
 
-New users should begin with the [Quick Start](docs/QUICK_START.md), complete one manual texture reload, and only then enable Auto Reload or test multi-texture write-back.
-
-## Distribution and Support
-
-Purchase from an official storefront to receive the verified release package and the support or update service described on that storefront.
-
-Product support is handled through the storefront where the product was purchased. Payment, receipts, tax or VAT handling, download access, refunds, and marketplace-account issues are also handled by that storefront.
-
-Before sharing an Operation Report or task log, remove private paths, account names, customer names, unpublished artwork references, credentials, payment information, and confidential production data.
+New users should begin with the [Quick Start](docs/QUICK_START.md), complete one manual texture reload, and then enable Auto Reload or test multi-texture write-back.
 
 ## License and Independent Product Notice
 
