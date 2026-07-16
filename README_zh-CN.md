@@ -18,6 +18,7 @@
 ## 获取 2D Link
 
 - [Superhive](https://superhivemarket.com/products/brandy-2d-link) — 产品页面、购买、FAQ、首次往返文档和平台内支持。
+- [itch.io](https://brandyspe.itch.io/brandy-2d-link)
 
 ## 两种工作方式
 
