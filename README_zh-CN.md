@@ -88,4 +88,4 @@
 
 2D Link 正式插件包以 **GPL-3.0-or-later** 分发，并包含对应源码文件和许可证文本。购买提供的是正式发行包，以及销售页面说明的支持或更新服务；GPL 权利以包内许可证为准。
 
-2D Link 是独立产品，与 Blender Foundation 或 Adobe 无关联，更多商标信息请查看[NOTICE](docs/NOTICE.md)。
+2D Link 是独立产品，与 Blender Foundation 或 Adobe 无关联，更多商标信息请查看 NOTICE.md。
