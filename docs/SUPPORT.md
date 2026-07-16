@@ -53,7 +53,7 @@ Please complete these checks first:
 3. Restart Blender and Photoshop when no write operation is active.
 4. Run **Test PS** again if the Photoshop path, execution mode, or version changed.
 5. Try **Reload Textures** once if Auto Reload did not update the view.
-6. Open **Open Operation Report** and read the first blocked condition and recommended action.
+6. Click **Open Operation Report** and read the first blocked condition and recommended action.
 7. Do not force-clear a task state or project lock while Photoshop may still be writing files.
 8. Reproduce the problem in a copy of the project when possible.
 9. Reduce the report to the smallest asset and sequence that still shows the problem.
