@@ -72,8 +72,8 @@ Send one issue per message and include:
 - exact reproduction steps;
 - expected result;
 - actual result and complete visible error text;
-- a reviewed and redacted copy of `BRANDY_2D_LINK_Last_Report`, when available;
-- for JSON issues, the import mode, original `skeleton.images` value, JSON folder layout, and whether external-folder access was authorized.
+- a reviewed and redacted copy of 'BRANDY_2D_LINK_Last_Report', when available;
+- for JSON issues, the import mode, original 'skeleton.images' value, JSON folder layout, and whether external-folder access was authorized.
 
 Screenshots are useful only when they clarify a UI state or visible error. Do not substitute screenshots for exact reproduction steps and text errors.
 
@@ -109,4 +109,4 @@ The official 2D Link add-on package is distributed under **GPL-3.0-or-later**. T
 
 2D Link is an independent product and is not affiliated with or endorsed by Blender Foundation, Adobe, or Esoteric Software. Blender, Adobe Photoshop, and Spine are trademarks of their respective owners.
 
-Blender is a trademark of Blender Foundation. Adobe and Photoshop are either registered trademarks or trademarks of Adobe in the United States and/or other countries. Unity is a trademark or registered trademark of Unity Technologies or its affiliates. Unreal Engine is a trademark or registered trademark of Epic Games, Inc. Spine is a trademark of Esoteric Software LLC.
+Blender is a trademark of Blender Foundation. Adobe and Photoshop are either registered trademarks or trademarks of Adobe in the United States and/or other countries. Unity is a trademark or registered trademark of Unity Technologies or its affiliates.
