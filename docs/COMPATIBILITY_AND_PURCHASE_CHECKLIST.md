@@ -55,7 +55,7 @@ Future Blender or Photoshop versions enter the published support matrix only aft
 
 ## Windows Automation and Storage
 
-The normal **Auto** execution mode uses local Windows and Photoshop automation components, including Windows Script Host (`cscript.exe`), WMI process queries, Photoshop COM automation, and JSX execution.
+The normal **Auto** execution mode uses local Windows and Photoshop automation components, including Windows Script Host (cscript.exe), WMI process queries, Photoshop COM automation, and JSX execution.
 
 Managed computers, hardened security configurations, or enterprise policies may block one or more of these components. **Manual Script** mode is available when automatic execution cannot be used, but the user must still be permitted to run JSX scripts from Photoshop.
 
@@ -83,7 +83,7 @@ Resize texture canvases before creating the 2D Link project. Pixel width and hei
 
 - 2D Link refreshes project texture files after they are saved; it is not brush-by-brush live streaming.
 - Saving only the linked PSD/PSB saves the working document and does not update every project texture.
-- Multi-texture write-back uses visible, top-level, name-matched layers inside `Brandy | Merge Layers`.
+- Multi-texture write-back uses visible, top-level, name-matched layers inside 'Brandy | Merge Layers'.
 - The three reserved linked-document groups and generated Smart Object transforms must remain unchanged.
 - PNG or TGA is recommended for artwork that will be edited and saved repeatedly.
 - JPG and JPEG are supported, but repeated saves may reduce quality because they use lossy compression.
