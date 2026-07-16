@@ -10,10 +10,14 @@
 
 本仓库是官方公开产品主页和文档中心，不包含可安装的正式发行包。请通过下方官方销售渠道获取完整 ZIP 包。
 
+## 插件工作流展示
+
+- [中文演示与教程](https://www.youtube.com/watch?v=-xTnPTlHHwc)
+- [English Demo & Tutorial](https://www.youtube.com/watch?v=seKdFcPqHf4)
+
 ## 获取 2D Link
 
 - [Superhive](https://superhivemarket.com/products/brandy-2d-link) — 产品页面、购买、FAQ、首次往返文档和平台内支持。
-- [itch.io](https://brandyspe.itch.io/brandy-2d-link) — 提供同一 1.6.3 正式发行包的官方销售渠道。
 
 请直接安装销售平台提供的完整 ZIP。不要把 GitHub 的 **Code > Download ZIP** 当作 Blender 插件安装包。
 
