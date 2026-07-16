@@ -71,9 +71,13 @@ The exact tested matrix and purchase checks are listed in the [Compatibility and
 
 ## Validation and Testing
 
-The official 1.6.3 Windows x64 package was matrix-tested across 30 combinations formed by six Blender versions and five Adobe Photoshop desktop versions.
+The 1.6.3 Windows x64 release was run through the same automated end-to-end QA suite across 30 combinations of six Blender versions and five Adobe Photoshop desktop versions.
 
-Additional supervised testing covered a 39-part production-style character asset and 40 repeated save–refresh cycles on representative legacy, mid-range, and current configurations. Testing covers the documented workflow on the listed host versions; third-party add-ons, custom studio pipelines, managed security policies, storage systems, and future host versions require separate evaluation.
+Each FULL run used a 39-part production-style asset and exercised release-build verification, asset import, project creation, linked PSD structure, automatic and manual texture refresh, dimension-mismatch protection, protected write-back failure, named-layer write-back, byte-exact Undo Last Merge, JSON export/import roundtrip, and PNG, TGA, and JPG refresh behavior.
+
+Four boundary configurations—the oldest and newest tested Photoshop versions paired with the oldest and newest tested Blender versions—also completed 20 serial Photoshop save–manual refresh cycles each. Across these 80 repeated cycles, no cycle failed and no geometry or Blender data-block drift was detected.
+
+All automated matrix runs completed without a release-blocking failure or report-level warning. The results apply to the documented workflow, the listed host versions, Windows x64, and the tested local-storage environment. Custom studio pipelines, restricted systems, third-party add-ons, network storage, and unlisted host versions should be evaluated separately.
 
 ## Documentation
 
