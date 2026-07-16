@@ -1,158 +1,104 @@
-# Brandy 2D Link
+# 2D Link | Multi-Texture Roundtrip For Blender & Adobe Photoshop
 
-[简体中文](README_zh-CN.md) · [Quick Start](docs/QUICK_START.md) · [User Guide](docs/USER_GUIDE.md) · [Compatibility Checklist](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST.md) · [Support](docs/SUPPORT.md) · [Release Notes](docs/RELEASE_NOTES.md)
+[简体中文](README_zh-CN.md) · [Quick Start](docs/QUICK_START.md) · [User Guide](docs/USER_GUIDE.md) · [Compatibility](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST.md) · [Support](docs/SUPPORT.md) · [Release Notes](docs/RELEASE_NOTES.md)
 
-**A lightweight Photoshop-to-Blender texture iteration workflow for 2D game art.**
+**Paint the whole asset in Adobe Photoshop. Keep every texture separate in Blender.**
 
-Brandy 2D Link is a Windows x64 Blender add-on for artists, animators, technical artists, and 2D game developers who use Blender together with the Adobe Photoshop desktop application.
+2D Link is a Windows x64 Blender add-on for artists working with cutout characters, modular sprites, layered game art, and other multi-part 2D assets. It lets you edit one project texture directly or paint with the complete assembled asset visible in a linked PSD/PSB.
 
-The core loop is intentionally simple: prepare sprite objects in Blender, create a Brandy project, edit project texture files in Photoshop, save the images, and reload the matching material textures in Blender manually or with Auto Reload.
+Inside Blender, the add-on is displayed as **Brandy 2D Link**, and its tools are located in the **Brandy** sidebar tab.
 
-It is a save-triggered workflow, not brush-by-brush live streaming.
+This repository is the official public product and documentation hub. The installable release package is distributed through the official storefronts below and is not included in this repository.
 
-Start Blender and Adobe Photoshop Workflow:
-![Quick Demo 1](assets/brandy-2d-link-workflow-1.gif)
-Paint-Save-Reload:
-![Quick Demo 2](assets/brandy-2d-link-workflow-2.gif)
+## Get 2D Link
 
-- English tutorial: https://youtu.be/seKdFcPqHf4
-- Chinese tutorial: https://youtu.be/-xTnPTlHHwc
+- [Superhive](https://superhivemarket.com/products/brandy-2d-link) — product page, purchase, FAQ, first-roundtrip documentation, and marketplace support.
+- [itch.io](https://brandyspe.itch.io/brandy-2d-link) — official storefront for the same 1.6.3 release package.
 
-- Get Brandy 2D Link on itch.io: https://brandyspe.itch.io/brandy-2d-link
-- Get Brandy 2D Link on Superhive: https://superhivemarket.com/products/brandy-2d-link
+Install the complete ZIP supplied by the storefront. Do not use GitHub's **Code > Download ZIP** as the Blender add-on package.
 
-## What It Helps With
+## Two Ways to Work
 
-Layered 2D assets in Blender often use many separate texture files. Editing them manually can become repetitive: find the right texture, open it, save it, return to Blender, refresh it, and keep the complete assembled asset in mind.
+### Quick Texture Edit
 
-Brandy 2D Link turns that into a predictable project workflow:
+Select a sprite object in Blender and open its project texture in Adobe Photoshop. Paint, save, then update Blender with **Reload Textures** or save-triggered **Auto Reload**.
 
-1. Prepare or import a static sprite layout in Blender.
-2. Create or link a Brandy project from one Blender collection.
-3. Open a project texture or the linked PSD/PSB in Photoshop.
-4. Paint and save.
-5. Use **Reload Textures** or **Auto Reload** in Blender.
-6. When context painting is needed, apply visible, name-matched layers from `Brandy | Merge Layers` back to the matching project textures.
+This is the fastest workflow for cleanup, color adjustments, and other edits that affect one texture.
 
-Saving only the linked PSD/PSB does not update Blender. Blender reloads the individual texture files stored in the project `textures` folder.
+### Full-Asset Painting
 
-## Main Features
+Open a linked PSD/PSB containing the assembled Blender asset. Its parts appear as linked Smart Objects, so you can judge seams, overlaps, alignment, and neighboring textures while painting in full context.
 
-- Create, link, switch, validate, and recover independent Brandy project folders.
-- Open the active sprite texture directly in Photoshop.
-- Reload project textures manually or with save-triggered Auto Reload.
-- Generate a linked PSD/PSB document with Smart Objects for full-layout painting context.
-- Apply visible, top-level, name-matched layers from `Brandy | Merge Layers` to matching source textures.
-- Create trusted backups before supported destructive write operations.
-- Undo the latest successful merge when strict file-integrity checks still pass.
-- Protect source texture dimensions, linked-document structure, project locks, task records, and recovery state.
-- Work with PNG, TGA, JPG, and JPEG static texture workflows.
-- Import and export supported PhotoshopToSpine static JSON layouts.
-- Import a limited set of static Spine2D Region Attachments.
-- Use utility tools for texture-format switching, imported material restoration, shader-value copying, duplicate generated material merging, and viewport isolation.
-- Use the interface in **Auto / 中文 / English**.
+When the artwork is ready, place visible, name-matched layers in `Brandy | Merge Layers`, save the document, and run **Apply “Merge Layers” to Source Textures** from Blender.
 
-## Intended Users
+Saving the linked PSD/PSB alone does not update every texture. The write-back action is intentionally separate from an ordinary document save.
 
-Brandy 2D Link is designed for:
+## Why Artists Use It
 
-- 2D game artists working between Photoshop and Blender.
-- Sprite, billboard, cutout, and layered character texture iteration.
-- Artists who want to paint while checking a complete assembled asset.
-- Technical artists preparing Photoshop–Blender assets for a larger game pipeline.
-- Small teams that prefer a focused, file-based workflow instead of a broad all-in-one pipeline tool.
+- The complete asset remains visible as painting context in Photoshop.
+- Blender continues to use the individual project texture files.
+- Direct texture edits can be refreshed without reopening or rebuilding materials.
+- Multi-texture write-back validates the linked document and target files before changing them.
+- Verified backups are created for the affected textures before a supported write-back operation.
+- **Undo Last Merge** can restore the latest successful write-back while the recorded files still match the recovery state.
 
-## What It Is Not
+These safeguards support normal production backups; they do not replace independent backups or version control.
 
-Brandy 2D Link is not:
+## Designed For
 
-- a real-time brush streaming system;
-- a Photoshop-side panel or UXP extension;
-- a direct Unity, Unreal Engine, or other engine exporter;
-- a full Spine rig, Mesh Attachment, constraint, two-color Tint, or animation importer;
-- a tool for arbitrary non-rectangular meshes or unrestricted UV layouts;
-- support for Photoshop web, Photoshop for iPad, non-Adobe image editors, macOS, or Linux;
-- a replacement for independent backups, version control, or normal Blender and Photoshop knowledge.
+2D Link is intended for:
 
-## Asset Requirements
+- cutout characters and layered animation assets;
+- modular sprites and multi-part game art;
+- billboard-style image planes and simple layered 2.5D assets;
+- artists who need complete visual context while keeping production textures separate;
+- small teams using a focused, file-based Photoshop–Blender workflow.
 
-Each project sprite should use:
+The main workflow expects flat rectangular image planes, rectangular active UVs, a consistent 2D plane orientation, unique part base names, and local file-based PNG, TGA, JPG, or JPEG textures.
 
-- a file-based PNG, TGA, JPG, or JPEG texture;
-- a flat rectangular mesh;
-- a valid rectangular active UV area;
-- a unique base name;
-- a consistent 2D plane orientation.
+It is not a general 3D texture-painting or projection system, a Photoshop panel, a direct game-engine exporter, or a complete Spine rig and animation importer.
 
-Internal mesh subdivisions are allowed when the outer boundary remains rectangular. Depth offsets may be used for visual stacking.
+## Requirements at a Glance
 
-Source texture pixel dimensions must remain unchanged after a project is linked. Resize texture canvases before creating the Brandy project. PNG or TGA is recommended for repeated lossless painting.
+- Windows x64
+- Blender 4.2.0 through 5.1.x install range
+- Adobe Photoshop desktop with JSX scripting
+- Local project storage on a normal filesystem
+- File-based PNG, TGA, JPG, or JPEG textures
 
-Brandy 2D Link is built around standard file-based Image Texture usage. Image Texture nodes hidden inside custom Shader Node Groups are not the documented texture source.
+Adobe Photoshop is required and is not included with 2D Link. Photoshop web, Photoshop for iPad, macOS, Linux, non-Adobe image editors, and beta or nightly host builds are not part of the official 1.6.3 support matrix.
 
-## Compatibility Summary
+The exact tested matrix and purchase checks are listed in the [Compatibility and Purchase Checklist](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST.md).
 
-The official Brandy 2D Link 1.6.3 package is supported for Windows x64 and the tested host versions below.
+## Validation and Testing
 
-**Blender**
+The official 1.6.3 Windows x64 package was matrix-tested across 30 combinations formed by six Blender versions and five Adobe Photoshop desktop versions.
 
-- Blender 4.2.21 LTS
-- Blender 4.3.2
-- Blender 4.4.3
-- Blender 4.5.10
-- Blender 5.0.1
-- Blender 5.1.2
-
-**Adobe Photoshop desktop**
-
-- Adobe Photoshop CC 2017.1.6
-- Adobe Photoshop 2020, version 21.2.1
-- Adobe Photoshop 2022, version 23.5.0
-- Adobe Photoshop 2025, version 26.10.0
-- Adobe Photoshop 2026, version 27.7.0
-
-Both the complete Blender version and the Photoshop year plus user-visible application version should match the tested list for the official support matrix. Adobe internal build numbers are not used as a purchase or support gate.
-
-The extension manifest is capped before the Blender 5.2 series. The intended install range is Blender 4.2.0 through Blender 5.1.x. Stable Blender versions inside that range but outside the exact tested list are compatibility candidates only.
-
-When several Photoshop versions are installed, the path and application version reported by **Test PS** identify the Photoshop instance that is actually connected.
-
-Read the full [Compatibility and Purchase Checklist](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST.md) before purchase.
-
-## Testing Summary
-
-The 1.6.3 Windows x64 package was matrix-tested across **30 Blender–Photoshop combinations** formed by the six Blender versions and five Photoshop versions listed above.
-
-A supervised production test used a real JSON layout and a **39-part character asset**. The covered workflow included static JSON import, project creation, Photoshop startup and connection testing, linked-document validation, manual and automatic texture reload, dimension-change rejection, named-layer write-back, latest-merge undo, JSON export and re-import, and PNG/TGA/JPG save-reload checks.
-
-Additional supervised long-session testing covered **40 save–refresh cycles** across representative legacy, mid-range, and current configurations.
-
-Testing covers the documented Brandy 2D Link workflow on the listed host versions. Third-party add-ons, custom studio pipelines, managed security policies, storage setups, and future host versions should be checked separately in the user's own environment.
+Additional supervised testing covered a 39-part production-style character asset and 40 repeated save–refresh cycles on representative legacy, mid-range, and current configurations. Testing covers the documented workflow on the listed host versions; third-party add-ons, custom studio pipelines, managed security policies, storage systems, and future host versions require separate evaluation.
 
 ## Documentation
 
-- [Quick Start](docs/QUICK_START.md) — fastest path to installation and first texture reload.
-- [User Guide](docs/USER_GUIDE.md) — full daily workflow, feature boundaries, recovery tools, and common mistakes.
-- [Compatibility and Purchase Checklist](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST.md) — environment, workflow, license, and support checks before purchase.
-- [Support Policy](docs/SUPPORT.md) — what support covers, what to include in a report, and what is outside scope.
-- [Release Notes](docs/RELEASE_NOTES.md) — current version notes.
+- [Quick Start](docs/QUICK_START.md) — installation and the shortest path to a successful first roundtrip.
+- [User Guide](docs/USER_GUIDE.md) — complete daily workflow, project handling, optional tools, and recovery actions.
+- [Compatibility and Purchase Checklist](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST.md) — exact tested versions, environment requirements, and purchase-fit checks.
+- [Support Policy](docs/SUPPORT.md) — support scope, reporting requirements, privacy guidance, and response target.
+- [Release Notes](docs/RELEASE_NOTES.md) — current package notes and unchanged workflow boundaries.
+- [Superhive FAQ](https://superhivemarket.com/products/brandy-2d-link/faq) — concise answers to common pre-purchase questions.
 
-## Purchase and Official Package
+New users should begin with the [Quick Start](docs/QUICK_START.md), complete one manual texture reload, and only then enable Auto Reload or test multi-texture write-back.
 
-This repository is a public product and documentation page. Official release packages are distributed through official storefronts.
+## Distribution and Support
 
-Purchase from an official storefront to receive the verified release package, documented support access, and storefront-managed updates.
+Purchase from an official storefront to receive the verified release package and the support or update service described on that storefront.
 
-## Support
+Product support is handled through the storefront where the product was purchased. Payment, receipts, tax or VAT handling, download access, refunds, and marketplace-account issues are also handled by that storefront.
 
-Support is handled through the storefront where the product was purchased. For direct-sale customers, use the support contact included with the official package or sales page.
-
-Before sending a report, read [Support Policy](docs/SUPPORT.md) and remove private paths, account names, customer names, unpublished artwork, credentials, payment information, and confidential production data from shared files.
+Before sharing an Operation Report or task log, remove private paths, account names, customer names, unpublished artwork references, credentials, payment information, and confidential production data.
 
 ## License and Independent Product Notice
 
-The official Brandy 2D Link add-on package is distributed under **GPL-3.0-or-later**. A purchase provides access to the official release package and to the support or update service stated on the sales page.
+The official 2D Link add-on package is distributed under **GPL-3.0-or-later** and includes the corresponding source files and license text. A purchase provides the official release package and the support or update service stated on the sales page; GPL rights remain as described in the included license.
 
-Brandy 2D Link is an independent product. It is not affiliated with, endorsed by, sponsored by, or officially connected to Blender Foundation, Adobe, Unity Technologies, Epic Games, Esoteric Software, or their products.
+2D Link is an independent product. It is not affiliated with, endorsed by, sponsored by, or officially connected to Blender Foundation, Adobe, Unity Technologies, Epic Games, Esoteric Software, or their products.
 
 Blender is a trademark of Blender Foundation. Adobe and Photoshop are either registered trademarks or trademarks of Adobe in the United States and/or other countries. Unity is a trademark or registered trademark of Unity Technologies or its affiliates. Unreal Engine is a trademark or registered trademark of Epic Games, Inc. Spine is a trademark of Esoteric Software LLC.

@@ -1,181 +1,183 @@
-# Brandy 2D Link 1.6.3 — Quick Start
+# 2D Link 1.6.3 — Quick Start
 
-This guide covers installation and the first normal texture-editing loop. For the complete workflow, feature boundaries, recovery tools, and common mistakes, read the [User Guide](USER_GUIDE.md).
+[Product Home](../README.md) · [User Guide](USER_GUIDE.md) · [Compatibility](COMPATIBILITY_AND_PURCHASE_CHECKLIST.md) · [Support](SUPPORT.md)
 
-## 1. Confirm the Environment
+This guide covers the shortest path to a successful first roundtrip between Blender and Adobe Photoshop. Use a copied test asset rather than the only copy of production artwork.
 
-Official support for version 1.6.3 is limited to Windows x64 and the tested versions below.
+## 1. Before You Begin
 
-**Blender**
+You need:
 
-- 4.2.21 LTS
-- 4.3.2
-- 4.4.3
-- 4.5.10
-- 5.0.1
-- 5.1.2
+- Windows x64;
+- Blender 4.2.0 through 5.1.x;
+- Adobe Photoshop desktop with JSX scripting;
+- local PNG, TGA, JPG, or JPEG texture files;
+- a multi-part 2D asset built from image-textured planes.
 
-**Adobe Photoshop desktop**
+Adobe Photoshop is required and is not included with 2D Link. See the [Compatibility and Purchase Checklist](COMPATIBILITY_AND_PURCHASE_CHECKLIST.md) for the exact tested versions and full support boundary.
 
-- CC 2017.1.6
-- 2020, version 21.2.1
-- 2022, version 23.5.0
-- 2025, version 26.10.0
-- 2026, version 27.7.0
-
-Both applications should match the list for the official support matrix. The 1.6.3 extension manifest is capped before the Blender 5.2 series.
-
-Use the desktop version of Photoshop with JSX scripting. Photoshop web, Photoshop for iPad, macOS, Linux, beta/nightly host builds, and other image editors are not officially supported.
+For the easiest first test, use one Blender collection containing a few flat rectangular parts, with one clear local Image Texture for each intended part. PNG or TGA is recommended for artwork that will be saved repeatedly.
 
 ## 2. Install the Add-on
 
-1. Keep the official Brandy 2D Link ZIP intact.
-2. In Blender, open **Edit > Preferences > Extensions**.
-3. Open the upper-right menu and choose **Install from Disk**.
-4. Select the official ZIP.
-5. Enable **Brandy 2D Link**.
+1. Download the official ZIP from the storefront where you purchased 2D Link.
+2. Keep the package as a ZIP file.
+3. In Blender, open **Edit > Preferences > Get Extensions** or **Extensions**, depending on the Blender version.
+4. Open the upper-right menu and choose **Install from Disk**.
+5. Select the complete official ZIP and enable **Brandy 2D Link**.
 6. In a 3D View, press `N` and open the **Brandy** tab.
 
-The panel title should show **Brandy 2D Link v1.6.3**.
+The panel title should show **Brandy 2D Link v1.6.3**. Do not install individual Python or JSX files separately.
 
-Do not unzip the package and install individual Python or JSX files.
+## 3. Connect Adobe Photoshop
 
-## 3. Prepare the Blender Asset
-
-1. Put the sprites for one asset in one Blender collection.
-2. Set that collection under **Project Collection**.
-3. Enable **Include Child Collections** if the asset uses nested collections.
-4. Save the `.blend` file.
-5. Keep an independent backup of important artwork.
-
-Each sprite should use a file-based PNG, TGA, JPG, or JPEG texture, a flat rectangular mesh, a valid rectangular active UV area, a unique base name, and a consistent 2D plane orientation.
-
-Do not use packed images, unsaved Blender image edits, unstable cloud-sync paths, network shares, NAS devices, symbolic links, directory junctions, or virtual filesystems for production projects.
-
-Resize texture canvases before creating a Brandy project. After the project is linked, texture pixel dimensions must stay the same.
-
-## 4. Configure and Test Photoshop
-
-1. Open **Photoshop Setup**.
-2. Set the Photoshop application path under **PS Executable**.
+1. In the **Brandy** tab, expand **Photoshop Setup**.
+2. Set **PS Executable** to the Photoshop application you want to use.
 3. Leave **PS Execution Mode** on **Auto** for the normal Windows workflow.
-4. Click **Open PS**.
-5. Wait until Photoshop has fully started.
-6. Close welcome screens, save dialogs, or other modal dialogs.
-7. Return to Blender and click **Test PS**.
+4. Start the configured Photoshop version, or click **Open PS**.
+5. Wait until Photoshop has fully started and close any welcome screen or modal dialog.
+6. Return to Blender and click **Test PS**.
+7. Confirm that the panel shows **PS connection: Ready** and the expected Photoshop version.
 
-When several Photoshop versions are installed, close other running versions first. The path and version shown by **Test PS** are authoritative. A shortcut name or installed folder alone does not prove which Photoshop instance is responding.
+2D Link does not automatically search for installed Photoshop versions. When several versions are installed, close the other running versions before testing. The path and version reported by **Test PS** identify the Photoshop instance that actually responds.
 
-## 5. Create a Brandy Project
+If automatic scripting is blocked by local security policy, expand **Photoshop Settings**, set **PS Execution Mode** to **Manual Script**, run the operation again, and follow the on-screen instruction to execute the generated JSX file through **File > Scripts > Browse** in Photoshop.
 
-1. Under **Project Action**, choose **Create a New Project in This Folder**.
-2. Set **Project Folder** to an empty local folder, or to a folder path that does not exist yet.
-3. Set **Canvas Padding** only when extra transparent workspace is needed around the complete linked document.
-4. Click **Create Project**.
-5. Keep Blender and Photoshop open until the task finishes.
+## 4. Prepare the Blender Asset
 
-After creation succeeds, **Current Project** shows the new project name, **Linked Document** shows the generated PSD or PSB, and the project folder contains project metadata plus a `textures` folder.
+Place the parts belonging to one asset in a clear Blender collection. Enable **Include Child Collections** when the asset uses nested collections.
 
-The original pre-project texture files are not modified by project creation. Later Photoshop editing and Merge Layers write-back affect the project texture copies.
+Before creating the project:
 
-## 6. Edit One Texture and Reload It
+- save each intended texture as a local PNG, TGA, JPG, or JPEG file;
+- use flat rectangular planes with rectangular active UVs and a consistent 2D orientation;
+- give every intended part a unique base name;
+- use a file-based Image Texture in the material's top-level node tree;
+- save the `.blend` file;
+- resize any texture canvas that needs to change before the project is created.
 
-1. Select one sprite object in Blender.
+Blender numeric suffixes such as `.001` are ignored for project part matching. Internal mesh subdivisions are supported when the outer boundary remains rectangular.
+
+After the project is created, keep each project texture's pixel width and height unchanged.
+
+## 5. Create the Project
+
+1. Set **Project Collection** to the collection containing the asset.
+2. Under **Project Action**, choose **Create a New Project in This Folder**.
+3. Set **Project Folder** to an empty local folder or a path that does not yet exist.
+4. Set **Canvas Padding** only when the complete linked document needs extra transparent workspace. Padding does not resize the individual textures.
+5. Click **Create Project**.
+6. Keep Blender and Photoshop open until the task finishes.
+7. Review **Open Operation Report** if creation does not succeed.
+
+During project creation, 2D Link copies eligible textures into the new project, reconnects Blender to those project copies, records the asset-to-texture relationship, and creates the linked PSD or PSB.
+
+**Create Project does not overwrite the original texture files.** After creation, the texture files inside the 2D Link project are the files used by this Blender–Photoshop roundtrip.
+
+Do not manually rename or move individual files inside the generated project structure.
+
+## 6. Complete a Quick Texture Edit
+
+Use this workflow when one texture needs a direct correction.
+
+1. Make the intended sprite mesh the active object in Blender.
 2. Click **Edit Active Object's Texture in PS**.
-3. Edit the image in Photoshop.
-4. Save without changing the pixel width or height.
-5. Return to Blender.
-6. Click **Reload Textures**.
+3. Paint and save the texture in Photoshop without changing its pixel dimensions.
+4. Return to Blender.
+5. Click **Reload Textures**.
 
-Blender reloads the project image file and updates the material's image texture. The material node setup is not rebuilt.
+Blender reloads the project image file without rebuilding the material node setup.
 
-If the operation is blocked, open **Open Operation Report** and follow the first safe action shown there.
+After manual reload works, you can enable **Auto Reload** before saving. Auto Reload refreshes a supported project texture after the file write becomes stable; it does not transmit individual brush strokes.
 
-## 7. Use Auto Reload
+## 7. Open the Full-Asset PSD/PSB
 
-Enable **Auto Reload**, then edit and save a project texture in Photoshop. Blender refreshes the saved image after the file write becomes stable.
+Use this workflow when you need the complete assembled asset as painting context.
 
-Auto Reload is useful for a smoother save-and-check loop. It is not a real-time brush preview.
+1. Confirm that the correct 2D Link project is active.
+2. Click **Open Linked Document in Photoshop**.
+3. Paint with the assembled asset visible.
+4. Save the PSD/PSB normally while you work.
 
-If nothing updates, confirm that the edited file is inside the active project's `textures` folder, the image size did not change, the project is on a normal local filesystem, Photoshop finished saving the file, and no modal dialog is blocking Photoshop. Use **Reload Textures** for an immediate manual reload.
+The linked document contains three reserved root groups:
 
-## 8. Understand the Linked Document
+- `Brandy | Linked Content` — linked Smart Objects representing the project textures;
+- `Brandy | Merge Layers` — visible artwork prepared for write-back;
+- `Brandy | Merged Layers` — processed artwork stored after a successful write-back.
 
-Open it with **Open Linked Document in Photoshop**.
+Do not rename, move, duplicate, replace, or reorganize the reserved groups. Do not move, rotate, flip, distort, or relink the generated Smart Objects.
 
-The linked PSD/PSB contains three reserved root groups:
+Ordinary painting layers, references, and notes can remain outside the reserved groups. Saving the PSD/PSB saves the working document but does not automatically update every project texture.
 
-- `Brandy | Linked Content`
-- `Brandy | Merge Layers`
-- `Brandy | Merged Layers`
+## 8. Write Artwork Back to the Textures
 
-Do not rename, duplicate, replace, move, or reorganize these groups. Do not manually alter the linked Smart Object transforms.
+1. Create or paste artwork layers directly inside `Brandy | Merge Layers`.
+2. Keep each artwork layer visible.
+3. Give each layer exactly the same name as its target in `Brandy | Linked Content`.
+4. Keep the artwork layers directly inside the group; do not use subgroups.
+5. Keep `Brandy | Merge Layers` at 100% opacity.
+6. Use **Normal** or **Pass Through** as the group blend mode.
+7. Save the PSD/PSB.
+8. Return to Blender and confirm that the correct project is active.
+9. Click **Apply “Merge Layers” to Source Textures**.
+10. Review any warning before continuing, then wait for Photoshop and Blender to finish.
 
-Saving only the linked PSD/PSB does not update Blender. Blender reloads the individual files in the project `textures` folder.
+Names are case-sensitive. Copying target names from `Brandy | Linked Content` is the safest method.
 
-## 9. Paint in Context with Merge Layers
+When artwork crosses several parts, duplicate the relevant artwork once for each target and name each copy after that target. During write-back, each matched layer is mapped to its target and clipped to that texture's canvas.
 
-1. Open the linked document in Photoshop.
-2. Create a visible artwork layer directly at the top level of `Brandy | Merge Layers`.
-3. Do not place it inside a subgroup.
-4. Name the layer exactly like the target sprite, including case.
-5. Paint the required change.
-6. Save the linked document.
-7. Return to Blender.
-8. Click **Apply “Merge Layers” to Source Textures**.
+Before changing files, 2D Link validates the linked document and target textures and creates backups for the files involved. After a successful write-back, matching project textures are updated, processed artwork moves to `Brandy | Merged Layers`, the linked document is saved, and Blender attempts to refresh the affected images.
 
-The add-on maps each visible, top-level, name-matched layer into the matching source texture. Pixels outside that texture canvas are clipped.
+For strict pixel-level work, especially around soft transparent edges across overlapping parts, direct single-texture editing remains the most controlled method.
 
-For artwork crossing several sprites, duplicate the artwork layer once per target and name each copy after its target.
+## 9. Undo the Latest Write-Back
 
-For strict pixel-level work, especially around soft transparent edges across overlapping sprites, direct single-texture editing remains the most controlled method.
+Click **Undo Last Merge** to restore the most recent successful Merge Layers operation.
 
-## 10. Undo the Latest Merge
+Use it before continuing to edit or save new changes. Undo is available only while the current project files still match the recovery state recorded by 2D Link. It may be refused after a target file has changed again or when a required backup is missing.
 
-After a successful apply operation, **Undo Last Merge** may become available.
+The built-in backup and undo features are additional safeguards. Continue to keep normal production backups.
 
-Use it immediately if the merge result is wrong. Do not continue editing or saving new changes before using it.
+## 10. Common First-Run Problems
 
-The command is intentionally refused when the current files no longer match the recorded pre-merge state.
+### Test PS fails
 
-## 11. Link or Switch to an Existing Project
+- Check **PS Executable**.
+- Start the configured Photoshop version.
+- Close other running Photoshop versions.
+- Close modal dialogs and run **Test PS** again.
+- Use **Manual Script** mode when automatic scripting is blocked.
 
-Use **Link or Switch to an Existing Project** only for compatible texture sets built from the same asset structure, such as skins, palettes, localization variants, or damage states.
+### Edit Active Object's Texture in PS opens no texture
 
-Before switching, the add-on validates sprite identity, order, layout, and texture dimensions. If validation fails, the current project remains connected.
+- Confirm that the correct project is active.
+- Make the intended mesh the active object.
+- Confirm that the project texture file still exists.
+- If the material contains several image textures, make sure one primary texture can be identified through a direct Base Color connection or supported import metadata.
 
-## 12. Reports and Recovery
+### A saved texture does not update
 
-Start with **Open Operation Report** whenever an operation fails.
+- Confirm that you edited the texture inside the active project's `textures` folder.
+- Enable Auto Reload before saving, or click **Reload Textures**.
+- Confirm that Photoshop did not save the file under a new name or location.
+- Confirm that the pixel dimensions did not change.
+- Remember that saving the linked PSD/PSB is different from saving an individual texture.
 
-Preserve the project folder, task folder, backups, incomplete-project marker, and project lock until the state is understood.
+### Merge Layers are not applied
 
-- **Recover Incomplete Project** appears only after interrupted project creation leaves a recoverable marker.
-- **Restore Source Textures from Backup** is for an interrupted write-back operation. Close Photoshop completely before using it.
-- **Repair Part IDs** should be used only when the Operation Report specifically says that the project metadata differs only in Part IDs.
-- **Open Task Log Folder** is mainly for deeper diagnostics and may be unavailable when no task log exists.
+- Save the PSD/PSB first.
+- Put visible artwork layers directly inside `Brandy | Merge Layers`.
+- Remove subgroups.
+- Copy the exact target names from `Brandy | Linked Content`.
+- Keep target texture dimensions unchanged.
+- Keep the Merge Layers group at 100% opacity with Normal or Pass Through blend mode.
 
-Do not manually delete locks, task state, backup records, or recovery markers while Photoshop may still be writing files.
+## 11. Reports, Recovery, and Next Steps
 
-## 13. Optional JSON and Utility Tools
+When an operation fails, expand **Photoshop Settings** and click **Open Operation Report**. The latest complete report is also stored in the Blender Text data-block `BRANDY_2D_LINK_Last_Report`.
 
-The JSON tools are optional static-sprite extensions. They do not change the main Photoshop save-and-refresh workflow.
+Do not manually delete project locks, task state, backup records, or recovery markers while Photoshop may still be writing files. Use recovery tools only when the Operation Report recommends them.
 
-- **PhotoshopToSpine Import** imports a supported static JSON layout.
-- **PhotoshopToSpine Export** exports the eligible current Blender layout without modifying the active Photoshop project.
-- **Spine2D Static Import** is limited to supported static Region Attachments.
-- **Switch Texture Format** redirects selected sprites to existing matching files in another supported format. It does not convert image data.
-- **Copy Shader Settings to Selected Objects** copies compatible unlinked shader values from the active object.
-- **Merge Duplicate Materials** consolidates matching generated materials when safe.
-- **Restore Imported Material** rebuilds the first imported material slot from stored import metadata.
-- **Isolate Selection** toggles Blender local view for the current viewport.
+Continue with the [User Guide](USER_GUIDE.md) for project switching, recovery tools, optional JSON workflows, utility tools, and detailed support preparation.
 
-For JSON workflows, keep image paths clear and close to the JSON folder when possible.
-
-## 14. Before Requesting Support
-
-Confirm that the official unmodified package is installed, the project is on a local filesystem, Test PS shows the intended Photoshop path and version, texture dimensions were not changed, and the issue can be reproduced in a copy of the project.
-
-Send one issue per message and include the Brandy version, full Blender version, Photoshop year and application version, Windows version, Test PS result, reproduction steps, expected result, actual result, visible error text, and a reviewed copy of `BRANDY_2D_LINK_Last_Report` when available.
-
-Remove private paths, account names, customer names, unpublished artwork, credentials, payment information, and confidential production data before sharing files or reports.
+Before sharing a report, remove private paths, account names, project names, customer names, unpublished artwork references, credentials, and confidential production information.

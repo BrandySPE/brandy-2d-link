@@ -1,27 +1,30 @@
-# Compatibility and Purchase Checklist — Brandy 2D Link 1.6.3
+# 2D Link 1.6.3 — Compatibility and Purchase Checklist
 
-Read this before purchase or installation. Brandy 2D Link is a focused Photoshop–Blender workflow tool, not a general-purpose 2D pipeline suite.
+[Product Home](../README.md) · [Quick Start](QUICK_START.md) · [User Guide](USER_GUIDE.md) · [Support](SUPPORT.md)
 
-## Minimum Environment
+Read this page before purchase or installation. 2D Link is a focused Blender–Adobe Photoshop workflow for multi-part 2D assets, not a general-purpose 2D or 3D pipeline suite.
 
-The official support boundary requires:
+## Quick Fit Check
 
-- Windows x64.
-- A locally installed Adobe Photoshop desktop application that can run JSX scripts.
-- Permission to run Blender extensions and Photoshop JSX scripts.
-- For Windows automatic mode: Windows Script Host (`cscript.exe`), WMI process queries, and Photoshop COM automation must be available.
-- Project files stored on a normal local filesystem.
-- Source texture pixel dimensions kept unchanged after the project is linked.
+2D Link is a suitable purchase when all of the following are true:
 
-Adobe Photoshop is not included with this add-on. A valid local installation is required.
+- you use Windows x64;
+- you have Adobe Photoshop desktop installed locally;
+- your asset is built from flat rectangular image planes with rectangular active UVs;
+- the asset uses local file-based PNG, TGA, JPG, or JPEG textures;
+- you can keep the active project on a normal local filesystem;
+- you can keep project texture pixel dimensions unchanged after linking;
+- you want either direct single-texture editing or full-asset painting with separate texture write-back.
 
-Windows automatic mode uses `cscript.exe`, WMI, Photoshop COM automation, and local JSX execution. These components may be disabled by enterprise policy or security software on managed or hardened systems. **Manual Script** mode remains available when automatic mode cannot be used.
+It is not the right tool when you require macOS or Linux support, a non-Adobe editor, real-time brush streaming, arbitrary 3D projection painting, direct game-engine export, or complete Spine rig and animation import.
 
-## Fully Tested and Officially Supported
+Adobe Photoshop is required and is not included with 2D Link.
 
-The following declaration applies to the official Windows x64 package. Match the complete Blender version and the Photoshop year plus user-visible application version. Adobe internal build numbers are intentionally not used as a purchase or support gate.
+## Exact Tested Matrix
 
-**Blender:**
+The official 1.6.3 Windows x64 package was fully tested with the versions below.
+
+**Blender**
 
 - Blender 4.2.21 LTS
 - Blender 4.3.2
@@ -30,7 +33,7 @@ The following declaration applies to the official Windows x64 package. Match the
 - Blender 5.0.1
 - Blender 5.1.2
 
-**Adobe Photoshop desktop:**
+**Adobe Photoshop desktop**
 
 - Adobe Photoshop CC 2017.1.6
 - Adobe Photoshop 2020, version 21.2.1
@@ -38,67 +41,82 @@ The following declaration applies to the official Windows x64 package. Match the
 - Adobe Photoshop 2025, version 26.10.0
 - Adobe Photoshop 2026, version 27.7.0
 
-The environment is inside the official support matrix when the exact Blender version and Photoshop public version are listed above, the project follows the documented workflow limits, and **Test PS** confirms the path and reported application version of the Photoshop instance that actually responds. When several Photoshop versions coexist, an installed name or shortcut alone does not identify the connected version. **Test PS** does not inspect Adobe internal build numbers.
+The environment is inside the official support matrix when the complete Blender version and the Photoshop year plus user-visible application version are listed above, the project follows the documented workflow, and **Test PS** confirms the path and version of the Photoshop instance that actually responds.
 
-The extension manifest is capped before the Blender 5.2 series. The intended install range is Blender 4.2.0 through Blender 5.1.x. Other stable Blender releases in that range, and other stable Photoshop public versions in the CC 2017 through 2026 generations, are compatibility candidates. Installation, launch, or a visible interface does not prove that the complete core workflow has been tested, but an unlisted stable version can still be discussed with support.
+Adobe internal build numbers are not used as a purchase or support gate. When several Photoshop versions coexist, an installed folder name or shortcut does not identify the connected version; use **Test PS**.
+
+## Install Range and Compatibility Candidates
+
+The extension manifest allows Blender 4.2.0 through Blender 5.1.x and is capped before the Blender 5.2 series.
+
+A stable Blender version inside that install range but outside the exact list, or another stable Photoshop public version in the covered CC 2017–2026 generations, is a compatibility candidate rather than a fully tested environment. Successful installation, launch, or visible UI does not prove that the complete core workflow has been tested.
+
+Future Blender or Photoshop versions enter the published support matrix only after the documented workflow is tested and the matrix is updated.
+
+## Windows Automation and Storage
+
+The normal **Auto** execution mode uses local Windows and Photoshop automation components, including Windows Script Host (`cscript.exe`), WMI process queries, Photoshop COM automation, and JSX execution.
+
+Managed computers, hardened security configurations, or enterprise policies may block one or more of these components. **Manual Script** mode is available when automatic execution cannot be used, but the user must still be permitted to run JSX scripts from Photoshop.
+
+For the official workflow, keep active projects on a normal local drive. Network shares, NAS devices, virtual filesystems, symbolic links, directory junctions, and delayed-sync folders are outside the supported storage model because file locks, timestamps, or write completion may not behave predictably.
+
+## Asset Requirements
+
+Each intended project part should use:
+
+- a local file-based PNG, TGA, JPG, or JPEG texture;
+- a flat rectangular mesh;
+- a valid rectangular active UV area;
+- a unique base name;
+- a consistent 2D plane orientation.
+
+Internal mesh subdivisions are supported when the outer boundary remains rectangular. Depth offsets may be used for visual stacking.
+
+The documented material source is a normal Image Texture in the material's top-level node tree. Image Texture nodes hidden inside arbitrary custom Shader Node Groups are not a documented source.
+
+Blender numeric suffixes such as `.001` are ignored for part matching. Names must still resolve to clear unique project identities after that suffix handling.
+
+Resize texture canvases before creating the 2D Link project. Pixel width and height must remain unchanged after linking.
+
+## Workflow Boundaries
+
+- 2D Link refreshes project texture files after they are saved; it is not brush-by-brush live streaming.
+- Saving only the linked PSD/PSB saves the working document and does not update every project texture.
+- Multi-texture write-back uses visible, top-level, name-matched layers inside `Brandy | Merge Layers`.
+- The three reserved linked-document groups and generated Smart Object transforms must remain unchanged.
+- PNG or TGA is recommended for artwork that will be edited and saved repeatedly.
+- JPG and JPEG are supported, but repeated saves may reduce quality because they use lossy compression.
+- Static PhotoshopToSpine and Spine2D JSON tools are optional utilities, not the core purpose of the product.
+- Spine2D support is limited to supported static Region Attachments; it does not import complete rigs, animation, Mesh Attachments, constraints, sequences, or two-color Tint.
+- External JSON image folders require explicit authorization, and ambiguous same-name files are not guessed.
+- The add-on does not replace independent backups, version control, reliable storage, or professional data recovery.
 
 ## Purchase Checklist
 
 - [ ] I use Windows x64.
-- [ ] I have a locally installed Adobe Photoshop desktop application.
-- [ ] My complete Blender version and my Photoshop year plus user-visible application version appear in the tested list, or I accept that my environment is only a compatibility candidate.
-- [ ] When several Photoshop versions coexist, I will run **Test PS** and verify the path and reported application version of the responding application.
-- [ ] For automatic mode, Windows Script Host, WMI, Photoshop COM automation, and local JSX execution are permitted on my computer.
-- [ ] My project files will be stored on a normal local drive.
-- [ ] I understand that a different Blender patch version or Photoshop public version is outside the tested matrix; Photoshop internal build numbers are not used as a support gate.
-- [ ] I understand that future Blender versions or Photoshop public versions enter support only after testing and publication.
-- [ ] I understand that source texture dimensions must remain unchanged during the linked workflow.
-- [ ] I understand that the add-on does not replace backups, version control, reliable storage, or professional data recovery.
-- [ ] I understand that the add-on does not provide a Photoshop panel and does not use UXP.
-- [ ] I have reviewed the feature limits, including the limited static Spine2D import scope.
-- [ ] I understand that external JSON image folders require explicit per-operation authorization and that ambiguous same-name image matches are not guessed.
-- [ ] I understand that product support and update access are defined by the storefront where I purchase the product.
+- [ ] I have Adobe Photoshop desktop installed locally and understand that it is not included.
+- [ ] My exact Blender and Photoshop public versions are in the tested matrix, or I accept a compatibility-candidate environment.
+- [ ] When several Photoshop versions are installed, I will use **Test PS** to confirm the responding path and version.
+- [ ] My system permits the automation required by my chosen execution mode.
+- [ ] My active 2D Link project will remain on a normal local filesystem.
+- [ ] My asset uses flat rectangular image planes and supported file-based textures.
+- [ ] I will keep project texture dimensions unchanged after linking.
+- [ ] I understand the difference between Quick Texture Edit, saving the linked PSD/PSB, and explicit Merge Layers write-back.
+- [ ] I understand the limited static scope of the optional JSON tools.
+- [ ] I will keep independent backups of production work.
+- [ ] I have reviewed the storefront's support, update, refund, and account terms.
 
-## Not Officially Supported
+## Official Package, License, and Store Policy
 
-- macOS and Linux.
-- Blender releases earlier than 4.2.0 or Blender 5.2.0 and later.
-- Any Blender version or Photoshop public version not included in the tested list, including compatibility candidates.
-- Photoshop releases earlier than CC 2017.1.6 or later than Photoshop 2026, version 27.7.0.
-- Photoshop on the web or Photoshop for iPad.
-- Non-Adobe image editors.
-- Blender or Photoshop beta, alpha, nightly, test-channel, or other pre-release builds.
-- Project folders that depend on network shares, NAS devices, virtual filesystems, symbolic links, directory junctions, or delayed synchronization behavior.
-- Direct engine export, full Spine animation import, Mesh Attachments, constraints, two-color Tint, or animation playback.
-- Arbitrary custom shader node groups as the documented texture source.
+The official 2D Link add-on package is distributed under **GPL-3.0-or-later** and includes the corresponding source files and license text.
 
-Only the platforms and host versions listed in this document are officially supported, regardless of implementation details in the package.
+A purchase provides the official tested package and the support or update service described by the storefront. This repository does not promise lifetime updates, lifetime support, or compatibility with future host versions.
 
-## Workflow Limits
-
-- The add-on reloads project texture files after they are saved. It is not live brush-by-brush streaming.
-- Blender reloads files in the active project's `textures` folder. Saving only the linked PSD/PSB does not update Blender.
-- The linked document's reserved groups must not be renamed, duplicated, replaced, moved, or reorganized.
-- Merge Layers write-back uses visible, top-level, name-matched layers inside `Brandy | Merge Layers`.
-- Source texture dimensions must not change after the project is linked.
-- PNG or TGA is recommended for repeated lossless painting.
-- Auto Reload depends on stable local file timestamps. Use **Reload Textures** when external storage or synchronization delays change detection.
-- Static JSON tools are secondary workflow extensions. They do not change the core Photoshop save-and-reload workflow.
-
-## License and Commercial Purchase
-
-The official Brandy 2D Link add-on package is distributed under **GPL-3.0-or-later**. The official package includes corresponding source files and the license text.
-
-A purchase provides the official tested package and the support or update service stated on the storefront. GPL rights remain as described in the license included with the package.
-
-## Refund and Store Policy
-
-Refunds, payment issues, VAT/tax handling, receipts, and license-key delivery are handled by the storefront where the purchase is made.
-
-Review the compatibility, version, storage-location, and workflow limits before purchase. Refund decisions remain subject to the store policy and applicable law.
+Payments, receipts, tax or VAT handling, download access, refunds, and marketplace-account issues are handled by the storefront where the purchase was made. Refund decisions remain subject to that storefront's policy and applicable law.
 
 ## Independent Product Notice
 
-Brandy 2D Link is an independent product. It is not affiliated with, endorsed by, sponsored by, or officially connected to Blender Foundation, Adobe, Unity Technologies, Epic Games, Esoteric Software, or their products.
+2D Link is an independent product. It is not affiliated with, endorsed by, sponsored by, or officially connected to Blender Foundation, Adobe, Unity Technologies, Epic Games, Esoteric Software, or their products.
 
 Blender is a trademark of Blender Foundation. Adobe and Photoshop are either registered trademarks or trademarks of Adobe in the United States and/or other countries. Unity is a trademark or registered trademark of Unity Technologies or its affiliates. Unreal Engine is a trademark or registered trademark of Epic Games, Inc. Spine is a trademark of Esoteric Software LLC.
