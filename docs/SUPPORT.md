@@ -97,7 +97,7 @@ Built-in backups and undo support the documented workflow but do not replace ind
 
 Payment, receipts, tax or VAT handling, download access, refund requests, and marketplace-account issues are handled by the storefront where the purchase was made.
 
-The sales page and order terms define the support and update service included with a purchase. This repository does not promise lifetime support, lifetime updates, or compatibility with future host versions.
+Each storefront defines the purchase, download, refund, and support terms for orders placed there. A purchase includes the current official release and support for the documented version. Future updates and compatibility with new Blender, Photoshop, or Windows versions are not guaranteed until they are tested and published.
 
 New Blender and Photoshop public versions enter the support matrix after the documented workflow is tested and the published compatibility page is updated.
 
