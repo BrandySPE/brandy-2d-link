@@ -53,7 +53,7 @@ These safeguards complement normal production backups and version control; they 
 
 The main workflow expects flat rectangular image planes, rectangular active UVs, a consistent 2D plane orientation, unique part base names, and local file-based PNG, TGA, JPG, or JPEG textures.
 
-It is not a general 3D texture-painting or projection system, a Photoshop panel, a direct game-engine exporter, or a complete Spine rig and animation importer.
+2D Link focuses on file-based 2D texture roundtrips for multi-part assets. It does not provide general 3D projection painting, direct game-engine export, Photoshop panel integration, or full Spine rig and animation import.
 
 ## Requirements at a Glance
 
@@ -63,7 +63,7 @@ It is not a general 3D texture-painting or projection system, a Photoshop panel,
 - Local project storage on a normal filesystem
 - File-based PNG, TGA, JPG, or JPEG textures
 
-Adobe Photoshop is required and is not included with 2D Link. Photoshop web, Photoshop for iPad, macOS, Linux, non-Adobe image editors, and beta or nightly host builds are not part of the official 1.6.3 support matrix.
+2D Link requires Adobe Photoshop desktop on Windows x64. Photoshop web, Photoshop for iPad, macOS, Linux, non-Adobe image editors, and beta or nightly host builds are outside the 1.6.3 support matrix.
 
 The exact tested matrix and purchase checks are listed in the [Compatibility and Purchase Checklist](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST.md).
 
