@@ -10,10 +10,14 @@ Inside Blender, the add-on is displayed as **Brandy 2D Link**, and its tools are
 
 This repository is the official public product and documentation hub, not the installable add-on package. The official storefront package includes the complete release and its corresponding GPL-licensed source files.
 
+## Watch the Workflow
+
+- [English Demo & Tutorial](https://www.youtube.com/watch?v=seKdFcPqHf4)
+- [中文演示与教程](https://www.youtube.com/watch?v=-xTnPTlHHwc)
+
 ## Get 2D Link
 
 - [Superhive](https://superhivemarket.com/products/brandy-2d-link) — product page, purchase, FAQ, first-roundtrip documentation, and marketplace support.
-- [itch.io](https://brandyspe.itch.io/brandy-2d-link) — official storefront for the same 1.6.3 release package.
 
 Install the complete ZIP supplied by the storefront. Do not use GitHub's **Code > Download ZIP** as the Blender add-on package.
 
