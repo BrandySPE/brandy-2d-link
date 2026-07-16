@@ -18,6 +18,7 @@ This repository is the official public product and documentation hub, not the in
 ## Get 2D Link
 
 - [Superhive](https://superhivemarket.com/products/brandy-2d-link) — product page, purchase, FAQ, first-roundtrip documentation, and marketplace support.
+- [itch.io](https://brandyspe.itch.io/brandy-2d-link)
 
 ## Two Ways to Work
 
