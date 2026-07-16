@@ -8,7 +8,7 @@
 
 Inside Blender, the add-on is displayed as **Brandy 2D Link**, and its tools are located in the **Brandy** sidebar tab.
 
-This repository is the official public product and documentation hub. The installable release package is distributed through the official storefronts below and is not included in this repository.
+This repository is the official public product and documentation hub, not the installable add-on package. The official storefront package includes the complete release and its corresponding GPL-licensed source files.
 
 ## Get 2D Link
 
