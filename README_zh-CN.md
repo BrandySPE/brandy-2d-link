@@ -6,7 +6,7 @@
 
 2D Link 是一款 Blender 插件，适用于碎图化角色、模块化精灵图、分层游戏美术和其他多部件 2D 资产。插件支持直接编辑单张项目贴图，也支持通过关联 PSD/PSB 在完整资产中进行绘制。
 
-插件在 Blender 内显示为 **Brandy 2D Link**，主要工具位于 3D View 的 **Brandy** 侧栏标签中。
+插件在 Blender 内显示为 **Brandy 2D Link**，主要工具位于 3D 视图中的 **Brandy** 侧栏标签中。
 
 本仓库是官方公开产品主页和文档中心，不包含可安装的正式发行包。请通过下方官方销售渠道获取完整 ZIP 包。
 
@@ -20,22 +20,21 @@
 - [Superhive](https://superhivemarket.com/products/brandy-2d-link)
 - [itch.io](https://brandyspe.itch.io/brandy-2d-link)
 
-
 ## 两种工作方式
 
 ### 单贴图快速编辑
 
-在 Blender 中选择一个精灵对象，直接用 Adobe Photoshop 打开它的项目贴图。绘制并保存后，通过 **Reload Textures** 或保存触发的 **Auto Reload** 更新 Blender。
+在 Blender 中选择一个面片对象，可直接用 Adobe Photoshop 打开它的项目贴图。绘制并保存后，通过 **手动刷新** 或保存触发的 **自动刷新** 来刷新 Blender 中的显示。
 
-这适合清理、调色和其他只影响一张贴图的修改。
+该方式适合清理、调色和其他只影响单张贴图的修改。
 
 ### 完整资产绘制
 
 打开包含完整 Blender 资产的关联 PSD/PSB。各部件以关联智能对象显示，绘制时可以同时判断接缝、重叠、对齐和相邻贴图关系。
 
-作品准备好后，将可见且名称匹配的图层放入 `Brandy | Merge Layers`，保存文档，再从 Blender 执行 **Apply “Merge Layers” to Source Textures**。
+在 Adobe Photoshop 中进行全局绘制后，将名称匹配的图层放入名为 “Brandy | Merge Layers” 的图层组，保存文档，再从 Blender 执行 **将 PS 合并组应用到源贴图**。
 
-仅保存关联 PSD/PSB 不会自动更新所有贴图。普通文档保存与多贴图写回被有意设计为两个独立动作。
+仅保存关联 PSD/PSB 不会自动更新所有贴图。普通文档保存与多贴图写回被设计成了两个独立动作。
 
 ## 它能提供的帮助
 
@@ -73,7 +72,7 @@
 
 ## 验证与测试
 
-1.6.3 Windows x64 正式版使用同一套自动化端到端 QA 流程，在 6 个 Blender 版本与 5 个 Adobe Photoshop 桌面版组成的 30 个版本组合中完成了实机测试。
+1.6.3 Windows x64 正式版使用同一套自动化端到端测试流程，在 6 个 Blender 版本与 5 个 Adobe Photoshop 桌面版组成的 30 个版本组合中完成了实机测试。
 
 每次完整测试均使用一个包含 39 个部件的生产型资产，测试内容包括正式构建校验、资产导入、项目创建、关联 PSD 结构、自动与手动贴图刷新、尺寸不匹配保护、异常状态下的安全写回拒绝、按名称匹配的图层写回、字节级精确恢复的 Undo Last Merge、JSON 导出与导入往返，以及 PNG、TGA 和 JPG 的保存与刷新流程。
 
@@ -91,9 +90,3 @@
 - [Superhive FAQ](https://superhivemarket.com/products/brandy-2d-link/faq) — 常见购买前问题的简要说明。
 
 第一次使用时，建议先按照[快速入门](docs/QUICK_START_zh-CN.md)完成一次手动贴图刷新，再启用 Auto Reload 或测试多贴图写回。
-
-## 许可证与独立产品声明
-
-2D Link 正式插件包以 **GPL-3.0-or-later** 分发，并包含对应源码文件和许可证文本。购买提供的是正式发行包，以及销售页面说明的支持或更新服务；GPL 权利以包内许可证为准。
-
-2D Link 是独立产品，与 Blender Foundation 或 Adobe 无关联，更多商标信息请查看 NOTICE.md。
