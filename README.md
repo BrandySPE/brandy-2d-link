@@ -35,14 +35,11 @@ Saving the linked PSD/PSB alone does not update every texture. The write-back ac
 
 ## Why Artists Use It
 
-- The complete asset remains visible as painting context in Photoshop.
-- Blender continues to use the individual project texture files.
-- Direct texture edits can be refreshed without reopening or rebuilding materials.
-- Multi-texture write-back validates the linked document and target files before changing them.
-- Verified backups are created for the affected textures before a supported write-back operation.
-- **Undo Last Merge** can restore the latest successful write-back while the recorded files still match the recovery state.
+- Edit and refresh one project texture without reconnecting or rebuilding its Blender material.
+- Paint with the assembled asset visible, making seams, overlaps, and neighboring parts easier to judge.
+- Write finished artwork back to multiple project textures with document validation, verified backups, and Undo Last Merge.
 
-These safeguards support normal production backups; they do not replace independent backups or version control.
+These safeguards complement normal production backups and version control; they do not replace them.
 
 ## Designed For
 
