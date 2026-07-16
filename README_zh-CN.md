@@ -4,7 +4,7 @@
 
 **在 Adobe Photoshop 中查看并绘制完整资产，同时让 Blender 继续使用独立贴图。**
 
-2D Link 是一款 Windows x64 Blender 插件，适用于剪纸角色、模块化精灵、分层游戏美术和其他多部件 2D 资产。它既能直接编辑单张项目贴图，也能通过关联 PSD/PSB 在完整组装资产的上下文中绘制。
+2D Link 是一款 Blender 插件，适用于碎图化角色、模块化精灵图、分层游戏美术和其他多部件 2D 资产。插件支持直接编辑单张项目贴图，也支持通过关联 PSD/PSB 在完整资产中进行绘制。
 
 插件在 Blender 内显示为 **Brandy 2D Link**，主要工具位于 3D View 的 **Brandy** 侧栏标签中。
 
@@ -17,8 +17,9 @@
 
 ## 获取 2D Link
 
-- [Superhive](https://superhivemarket.com/products/brandy-2d-link) — 产品页面、购买、FAQ、首次往返文档和平台内支持。
+- [Superhive](https://superhivemarket.com/products/brandy-2d-link)
 - [itch.io](https://brandyspe.itch.io/brandy-2d-link)
+
 
 ## 两种工作方式
 
