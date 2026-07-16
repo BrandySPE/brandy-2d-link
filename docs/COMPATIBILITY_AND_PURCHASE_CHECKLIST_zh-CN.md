@@ -55,7 +55,7 @@ Adobe 内部构建号不作为购买或支持门槛。多版本 Photoshop 共存
 
 ## Windows 自动化与存储
 
-正常 **Auto** 执行模式会使用本地 Windows 和 Photoshop 自动化组件，包括 Windows Script Host（`cscript.exe`）、WMI 进程查询、Photoshop COM 自动化和 JSX 执行。
+正常 **Auto** 执行模式会使用本地 Windows 和 Photoshop 自动化组件，包括 Windows Script Host（cscript.exe）、WMI 进程查询、Photoshop COM 自动化和 JSX 执行。
 
 受管电脑、安全加固环境或企业策略可能阻止其中一个或多个组件。自动执行不可用时可以使用 **Manual Script**，但用户仍需具备从 Photoshop 运行 JSX 脚本的权限。
 
@@ -75,7 +75,7 @@ Adobe 内部构建号不作为购买或支持门槛。多版本 Photoshop 共存
 
 文档化材质来源是材质顶层节点树中的普通 Image Texture。隐藏在任意自定义 Shader Node Group 内的 Image Texture 不属于公开支持来源。
 
-项目匹配会忽略 `.001` 这类 Blender 数字后缀。经过后缀处理后，各名称仍需能够形成清晰且唯一的项目身份。
+项目匹配会忽略 “.001” 这类 Blender 数字后缀。经过后缀处理后，各名称仍需能够形成清晰且唯一的项目身份。
 
 请在创建 2D Link 项目前调整贴图画布。关联后必须保持像素宽高不变。
 
@@ -83,7 +83,7 @@ Adobe 内部构建号不作为购买或支持门槛。多版本 Photoshop 共存
 
 - 2D Link 在项目贴图保存后刷新文件，不是逐笔刷实时串流。
 - 仅保存关联 PSD/PSB 只会保存工作文档，不会更新所有项目贴图。
-- 多贴图写回使用 `Brandy | Merge Layers` 中可见、顶层、名称匹配的图层。
+- 多贴图写回使用 “Brandy | Merge Layers” 中可见、顶层、名称匹配的图层。
 - 三个保留组和生成的智能对象变换必须保持不变。
 - 需要反复编辑与保存时推荐 PNG 或 TGA。
 - JPG 和 JPEG 受到支持，但重复保存可能因有损压缩降低质量。
