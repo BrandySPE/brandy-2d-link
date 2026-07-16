@@ -19,8 +19,6 @@
 
 - [Superhive](https://superhivemarket.com/products/brandy-2d-link) — 产品页面、购买、FAQ、首次往返文档和平台内支持。
 
-请直接安装销售平台提供的完整 ZIP。不要把 GitHub 的 **Code > Download ZIP** 当作 Blender 插件安装包。
-
 ## 两种工作方式
 
 ### 单贴图快速编辑
