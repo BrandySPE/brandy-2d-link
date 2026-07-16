@@ -25,7 +25,7 @@ For the easiest first test, use one Blender collection containing a few flat rec
 3. In Blender, open **Edit > Preferences > Get Extensions** or **Extensions**, depending on the Blender version.
 4. Open the upper-right menu and choose **Install from Disk**.
 5. Select the complete official ZIP and enable **Brandy 2D Link**.
-6. In a 3D View, press `N` and open the **Brandy** tab.
+6. In a 3D View, press 'N' and open the **Brandy** tab.
 
 The panel title should show **Brandy 2D Link v1.6.3**. Do not install individual Python or JSX files separately.
 
