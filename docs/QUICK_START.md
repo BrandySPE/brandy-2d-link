@@ -53,10 +53,10 @@ Before creating the project:
 - use flat rectangular planes with rectangular active UVs and a consistent 2D orientation;
 - give every intended part a unique base name;
 - use a file-based Image Texture in the material's top-level node tree;
-- save the `.blend` file;
+- save the '.blend' file;
 - resize any texture canvas that needs to change before the project is created.
 
-Blender numeric suffixes such as `.001` are ignored for project part matching. Internal mesh subdivisions are supported when the outer boundary remains rectangular.
+Blender numeric suffixes such as '.001' are ignored for project part matching. Internal mesh subdivisions are supported when the outer boundary remains rectangular.
 
 After the project is created, keep each project texture's pixel width and height unchanged.
 
@@ -101,9 +101,9 @@ Use this workflow when you need the complete assembled asset as painting context
 
 The linked document contains three reserved root groups:
 
-- `Brandy | Linked Content` — linked Smart Objects representing the project textures;
-- `Brandy | Merge Layers` — visible artwork prepared for write-back;
-- `Brandy | Merged Layers` — processed artwork stored after a successful write-back.
+- 'Brandy | Linked Content' — linked Smart Objects representing the project textures;
+- 'Brandy | Merge Layers' — visible artwork prepared for write-back;
+- 'Brandy | Merged Layers' — processed artwork stored after a successful write-back.
 
 Do not rename, move, duplicate, replace, or reorganize the reserved groups. Do not move, rotate, flip, distort, or relink the generated Smart Objects.
 
@@ -111,22 +111,22 @@ Ordinary painting layers, references, and notes can remain outside the reserved 
 
 ## 8. Write Artwork Back to the Textures
 
-1. Create or paste artwork layers directly inside `Brandy | Merge Layers`.
+1. Create or paste artwork layers directly inside 'Brandy | Merge Layers'.
 2. Keep each artwork layer visible.
-3. Give each layer exactly the same name as its target in `Brandy | Linked Content`.
+3. Give each layer exactly the same name as its target in 'Brandy | Linked Content'.
 4. Keep the artwork layers directly inside the group; do not use subgroups.
-5. Keep `Brandy | Merge Layers` at 100% opacity.
+5. Keep 'Brandy | Merge Layers' at 100% opacity.
 6. Use **Normal** or **Pass Through** as the group blend mode.
 7. Save the PSD/PSB.
 8. Return to Blender and confirm that the correct project is active.
 9. Click **Apply “Merge Layers” to Source Textures**.
 10. Review any warning before continuing, then wait for Photoshop and Blender to finish.
 
-Names are case-sensitive. Copying target names from `Brandy | Linked Content` is the safest method.
+Names are case-sensitive. Copying target names from 'Brandy | Linked Content' is the safest method.
 
 When artwork crosses several parts, duplicate the relevant artwork once for each target and name each copy after that target. During write-back, each matched layer is mapped to its target and clipped to that texture's canvas.
 
-Before changing files, 2D Link validates the linked document and target textures and creates backups for the files involved. After a successful write-back, matching project textures are updated, processed artwork moves to `Brandy | Merged Layers`, the linked document is saved, and Blender attempts to refresh the affected images.
+Before changing files, 2D Link validates the linked document and target textures and creates backups for the files involved. After a successful write-back, matching project textures are updated, processed artwork moves to 'Brandy | Merged Layers', the linked document is saved, and Blender attempts to refresh the affected images.
 
 For strict pixel-level work, especially around soft transparent edges across overlapping parts, direct single-texture editing remains the most controlled method.
 
@@ -157,7 +157,7 @@ The built-in backup and undo features are additional safeguards. Continue to kee
 
 ### A saved texture does not update
 
-- Confirm that you edited the texture inside the active project's `textures` folder.
+- Confirm that you edited the texture inside the active project's 'textures' folder.
 - Enable Auto Reload before saving, or click **Reload Textures**.
 - Confirm that Photoshop did not save the file under a new name or location.
 - Confirm that the pixel dimensions did not change.
@@ -166,15 +166,15 @@ The built-in backup and undo features are additional safeguards. Continue to kee
 ### Merge Layers are not applied
 
 - Save the PSD/PSB first.
-- Put visible artwork layers directly inside `Brandy | Merge Layers`.
+- Put visible artwork layers directly inside 'Brandy | Merge Layers'.
 - Remove subgroups.
-- Copy the exact target names from `Brandy | Linked Content`.
+- Copy the exact target names from 'Brandy | Linked Content'.
 - Keep target texture dimensions unchanged.
 - Keep the Merge Layers group at 100% opacity with Normal or Pass Through blend mode.
 
 ## 11. Reports, Recovery, and Next Steps
 
-When an operation fails, expand **Photoshop Settings** and click **Open Operation Report**. The latest complete report is also stored in the Blender Text data-block `BRANDY_2D_LINK_Last_Report`.
+When an operation fails, expand **Photoshop Settings** and click **Open Operation Report**. The latest complete report is also stored in the Blender Text data-block 'BRANDY_2D_LINK_Last_Report'.
 
 Do not manually delete project locks, task state, backup records, or recovery markers while Photoshop may still be writing files. Use recovery tools only when the Operation Report recommends them.
 
