@@ -17,8 +17,10 @@ This repository is the official public product and documentation hub, not the in
 
 ## Get 2D Link
 
-- [Superhive](https://superhivemarket.com/products/brandy-2d-link) — product page, purchase, FAQ, first-roundtrip documentation, and marketplace support.
+- [Superhive](https://superhivemarket.com/products/brandy-2d-link)
 - [itch.io](https://brandyspe.itch.io/brandy-2d-link)
+
+Installable builds are distributed through the official storefronts above; GitHub Releases and Code → Download ZIP are not used for product installation.
 
 ## Two Ways to Work
 
@@ -32,7 +34,7 @@ This is the fastest workflow for cleanup, color adjustments, and other edits tha
 
 Open a linked PSD/PSB containing the assembled Blender asset. Its parts appear as linked Smart Objects, so you can judge seams, overlaps, alignment, and neighboring textures while painting in full context.
 
-When the artwork is ready, place visible, name-matched layers in `Brandy | Merge Layers`, save the document, and run **Apply “Merge Layers” to Source Textures** from Blender.
+When the artwork is ready, place each visible artwork layer directly inside Brandy | Merge Layers and name it after its target part. Save the document, then run Apply "Merge Layers" to Source Textures in Blender.
 
 Saving the linked PSD/PSB alone does not update every texture. The write-back action is intentionally separate from an ordinary document save.
 
@@ -72,11 +74,9 @@ The exact tested matrix and purchase checks are listed in the [Compatibility and
 
 ## Validation and Testing
 
-The 1.6.3 Windows x64 release was run through the same automated end-to-end QA suite across 30 combinations of six Blender versions and five Adobe Photoshop desktop versions.
+TThe 1.6.3 Windows x64 release completed the same end-to-end test workflow across 30 Blender–Photoshop version combinations. Each run used a 39-part character asset and covered project creation, linked PSD setup, manual and automatic texture refresh, dimension-mismatch blocking, invalid-document rejection, named-layer write-back, Undo Last Merge, JSON roundtripping, and PNG, TGA, and JPG refresh behavior.
 
-Each FULL run used a 39-part production-style asset and exercised release-build verification, asset import, project creation, linked PSD structure, automatic and manual texture refresh, dimension-mismatch protection, safe write-back rejection under an invalid document state, named-layer write-back, byte-exact Undo Last Merge, JSON export/import roundtrip, and PNG, TGA, and JPG refresh behavior.
-
-Four boundary configurations—the oldest and newest tested Photoshop versions paired with the oldest and newest tested Blender versions—also completed 20 serial Photoshop save–manual refresh cycles each. Across these 80 repeated cycles, no cycle failed and no geometry or Blender data-block drift was detected.
+Four boundary version pairings also completed 20 consecutive save-and-manual-refresh cycles each. All 80 cycles completed without failure or detected changes to geometry or Blender data-blocks.
 
 All automated matrix runs completed without a release-blocking failure or report-level warning. The results apply to the documented workflow, the listed host versions, Windows x64, and the tested local-storage environment. Custom studio pipelines, restricted systems, third-party add-ons, network storage, and unlisted host versions should be evaluated separately.
 
@@ -93,6 +93,8 @@ New users should begin with the [Quick Start](docs/QUICK_START.md), complete one
 
 ## License and Independent Product Notice
 
-The official 2D Link add-on package is distributed under **GPL-3.0-or-later** and includes the corresponding source files and license text. A purchase provides the official release package and the support or update service stated on the sales page; GPL rights remain as described in the included license.
+Your purchase includes the current official release and product support for the documented version. Future updates and compatibility with new Blender or Photoshop versions are not guaranteed until they are published on this page.
+
+The official add-on package is distributed under GPL-3.0-or-later and includes its corresponding source code. Purchases provide the official release package and the support terms stated by the selected storefront.
 
 2D Link is an independent product and is not affiliated with or endorsed by Blender Foundation or Adobe. See NOTICE.md for additional trademark notices.
