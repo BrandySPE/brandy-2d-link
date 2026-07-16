@@ -88,6 +88,4 @@
 
 2D Link 正式插件包以 **GPL-3.0-or-later** 分发，并包含对应源码文件和许可证文本。购买提供的是正式发行包，以及销售页面说明的支持或更新服务；GPL 权利以包内许可证为准。
 
-2D Link 是独立产品，与 Blender Foundation、Adobe、Unity Technologies、Epic Games、Esoteric Software 或其产品不存在从属、认可、赞助或官方关联关系。
-
-Blender 是 Blender Foundation 的商标。Adobe 和 Photoshop 是 Adobe 在美国和/或其他国家或地区的注册商标或商标。Unity 是 Unity Technologies 或其关联公司的商标或注册商标。Unreal Engine 是 Epic Games, Inc. 的商标或注册商标。Spine 是 Esoteric Software LLC 的商标。
+2D Link 是独立产品，与 Blender Foundation 或 Adobe 无关联，更多商标信息请查看[NOTICE](docs/NOTICE.md)
