@@ -1,122 +1,133 @@
 # 2D Link 1.6.3 — 兼容性与购买检查清单
 
-[产品主页](../README_zh-CN.md) · [快速入门](QUICK_START_zh-CN.md) · [用户指南](USER_GUIDE_zh-CN.md) · [技术支持](SUPPORT_zh-CN.md)
+[产品主页](../README_zh-CN.md) · [快速入门](QUICK_START_zh-CN.md) · [用户指南](USER_GUIDE_zh-CN.md) · [技术支持](SUPPORT_zh-CN.md) · [English](COMPATIBILITY_AND_PURCHASE_CHECKLIST.md)
 
-购买或安装前请阅读本页。2D Link 是面向多部件 2D 资产的 Blender–Adobe Photoshop 专用工作流，不是泛用型 2D 或 3D 管线套件。
+请使用本页确认 2D Link 是否适合你当前的电脑、宿主软件版本、资产结构和存储环境。
 
-## 快速判断是否适合
+## 快速适配检查
 
-满足以下全部条件时，2D Link 通常适合你的工作流：
+同时满足以下条件时，2D Link 1.6.3 通常适合你的工作流：
 
-- 使用 Windows x64；
-- 本地安装了 Adobe Photoshop 桌面版；
-- 资产由平面矩形图像网格和矩形活动 UV 构成；
-- 使用本地文件式 PNG、TGA、JPG 或 JPEG 贴图；
-- 活动项目能够保存在普通本地文件系统中；
-- 项目关联后可以保持贴图像素尺寸不变；
-- 需要直接单贴图编辑，或在完整资产上下文中绘制后分别写回贴图。
+- 使用 **Windows x64**。
+- 使用 **Blender 4.2.0 至 5.1.x**。
+- 同一台电脑已安装 Windows 版 Adobe Photoshop 桌面应用。
+- 资产由使用独立文件贴图的 2D 面片组成。
+- 项目可以存放在标准本地磁盘。
+- 可以接受保存触发的刷新，而不是逐笔触实时传输。
 
-如果你需要 macOS 或 Linux、非 Adobe 编辑器、逐笔刷实时串流、任意 3D 投射绘制、直接引擎导出，或完整 Spine 骨骼与动画导入，那么它不适合该需求。
+必须使用 Adobe Photoshop，且 Photoshop 不包含在产品中。无需额外安装 Photoshop 面板或扩展。
 
-2D Link 需要 Adobe Photoshop，但不包含 Photoshop。
+## 实测宿主版本
 
-## 精确实测矩阵
-
-1.6.3 Windows x64 正式包完整测试了以下版本。
+1.6.3 产品包已在以下版本组成的全部 30 组组合中完成文档所述工作流测试：
 
 **Blender**
 
-- Blender 4.2.21 LTS
-- Blender 4.3.2
-- Blender 4.4.3
-- Blender 4.5.10
-- Blender 5.0.1
-- Blender 5.1.2
+- 4.2.21 LTS
+- 4.3.2
+- 4.4.3
+- 4.5.10
+- 5.0.1
+- 5.1.2
 
-**Adobe Photoshop 桌面版**
+**Windows 版 Adobe Photoshop 桌面应用**
 
-- Adobe Photoshop CC 2017.1.6
-- Adobe Photoshop 2020，版本 21.2.1
-- Adobe Photoshop 2022，版本 23.5.0
-- Adobe Photoshop 2025，版本 26.10.0
-- Adobe Photoshop 2026，版本 27.7.0
+- CC 2017.1.6；部分 Photoshop 界面可能显示为 18.1.6
+- Photoshop 2020 21.2.1
+- Photoshop 2022 23.5.0
+- Photoshop 2025 26.10.0
+- Photoshop 2026 27.7.0
 
-当 Blender 完整版本和 Photoshop 年份及用户可见应用版本均列在上方，项目遵守文档化工作流，并且 **Test PS** 确认实际响应 Photoshop 的路径和版本时，该环境属于正式支持矩阵。
+另外，4 组边界版本组合分别完成了 20 次连续的 Photoshop 保存与手动刷新，共 80 次成功循环，未检测到场景几何或无关 Blender 数据块发生变化。
 
-Adobe 内部构建号不作为购买或支持门槛。多版本 Photoshop 共存时，安装目录或快捷方式不能证明当前连接版本，请以 **Test PS** 结果为准。
+处于 Blender 4.2.0–5.1.x 安装范围内但未列出的稳定版本，以及位于上述 Photoshop 公开版本之间的其他版本，可能可以工作，但没有完成完整矩阵测试。执行 **检测 PS** 后，插件可能把这类组合显示为 **兼容性候选**。
 
-## 安装范围与兼容候选
+Beta、Nightly、预览版或经过修改的宿主软件不在测试矩阵中。
 
-扩展清单允许 Blender 4.2.0 至 Blender 5.1.x，并在 Blender 5.2 系列之前截止。
+## 操作系统与 Photoshop 连接
 
-安装范围内但未列入精确清单的稳定 Blender 版本，或 CC 2017–2026 世代中其他稳定 Photoshop 公开版本，属于兼容候选，而不是完整实测环境。能够安装、启动或显示界面，不代表完整核心工作流已经测试。
+1.6.3 产品包面向 Windows x64。其自动 Photoshop 连接不支持 macOS 或 Linux。
 
-未来 Blender 或 Photoshop 版本只有在文档化工作流完成测试并更新矩阵后，才进入公开支持范围。
+2D Link 使用 Photoshop 桌面脚本。受管控或强化安全策略的 Windows 环境可能阻止自动启动脚本。如果 Photoshop 仍允许本地执行 JSX，可把 **PS 调用方式** 从默认的 **自动选择** 改为 **手动执行**。
 
-## Windows 自动化与存储
+安装了多个 Photoshop 版本时，请设置目标 **PS 启动路径**，关闭其他正在运行的 Photoshop，启动目标版本，再执行 **检测 PS**。检测结果中的路径和版本代表实际响应的 Photoshop 实例。
 
-正常 **Auto** 执行模式会使用本地 Windows 和 Photoshop 自动化组件，包括 Windows Script Host（cscript.exe）、WMI 进程查询、Photoshop COM 自动化和 JSX 执行。
+Photoshop 网页版、iPad 版和非 Adobe 图像编辑器不支持文档所述工作流。
 
-受管电脑、安全加固环境或企业策略可能阻止其中一个或多个组件。自动执行不可用时可以使用 **Manual Script**，但用户仍需具备从 Photoshop 运行 JSX 脚本的权限。
+## 存储要求
 
-正式工作流要求活动项目位于普通本地硬盘。网络共享、NAS、虚拟文件系统、符号链接、目录联接和延迟同步目录不在支持的存储模型内，因为文件锁、时间戳或写入完成状态可能不稳定。
+活动项目应保存在标准本地磁盘。
+
+网络共享、NAS、虚拟文件系统、符号链接、目录联接，以及存在延迟或分阶段同步的目录，可能影响保存检测、文件占用、项目验证或恢复。同步目录即使显示为本地路径，也可能延迟 Photoshop 完成保存后的文件状态。
+
+可以整体移动项目目录，但必须保持其内部结构不变。不支持单独移动或重命名生成文件。
 
 ## 资产要求
 
-每个目标项目部件应使用：
+主项目工作流要求：
 
-- 本地文件式 PNG、TGA、JPG 或 JPEG 贴图；
-- 平面矩形网格；
-- 有效的矩形活动 UV；
-- 唯一基础名称；
-- 一致的 2D 平面朝向。
+- 一个清晰的 Blender 集合对应一个资产；
+- 图像面片具有矩形外边界；
+- 活动 UV 保持矩形，不存在局部拉伸、接缝或重新排列的岛；
+- 资产各部件使用一致的 2D 平面朝向；
+- 每个目标部件具有唯一的基础名称；
+- 材质顶层节点树中存在可识别的文件式 Image Texture；
+- 使用本地 PNG、TGA、JPG 或 JPEG 文件。
 
-只要外边界保持矩形，内部网格细分可以存在。可以使用深度偏移表现视觉层级。
+只要外边界保持矩形，内部细分可以使用。可以整体旋转或镜像矩形 UV，但不能改变其局部形状。
 
-文档化材质来源是材质顶层节点树中的普通 Image Texture。隐藏在任意自定义 Shader Node Group 内的 Image Texture 不属于公开支持来源。
+匹配部件时会忽略 Blender 标准的三位数字复制后缀，例如 `.001`。移除后缀后，名称仍必须唯一。
 
-项目匹配会忽略 “.001” 这类 Blender 数字后缀。经过后缀处理后，各名称仍需能够形成清晰且唯一的项目身份。
+Image Texture 直接连接 Principled BSDF 的 Base Color 是最清晰的材质结构。打包进 `.blend` 的图像、生成图像、未保存图像，以及隐藏在任意自定义节点组中的贴图来源不属于主工作流。
 
-请在创建 2D Link 项目前调整贴图画布。关联后必须保持像素宽高不变。
+创建项目后，每张项目贴图都必须保持记录时的像素宽度和高度。需要调整画布尺寸时，应在创建项目之前完成。
 
-## 工作流边界
+## 项目与贴图行为
 
-- 2D Link 在项目贴图保存后刷新文件，不是逐笔刷实时串流。
-- 仅保存关联 PSD/PSB 只会保存工作文档，不会更新所有项目贴图。
-- 多贴图写回使用 “Brandy | Merge Layers” 中可见、顶层、名称匹配的图层。
-- 三个保留组和生成的智能对象变换必须保持不变。
-- 需要反复编辑与保存时推荐 PNG 或 TGA。
-- JPG 和 JPEG 受到支持，但重复保存可能因有损压缩降低质量。
-- 静态 PhotoshopToSpine 和 Spine2D JSON 工具是可选工具，不是产品核心用途。
-- Spine2D 支持仅限受支持的静态 Region Attachments，不导入完整骨骼、动画、Mesh Attachments、约束、序列或双色 Tint。
-- JSON 外部图像目录需要明确授权，同名文件存在歧义时插件不会猜测。
-- 插件不替代独立备份、版本管理、可靠存储或专业数据恢复。
+创建项目会把合格贴图复制到项目目录，并让 Blender 改用这些副本，不会覆盖创建项目前使用的文件。
 
-## 购买前检查
+此后，**用 PS 编辑活动贴图**、**手动刷新**、**自动刷新**和 **将 PS 合并组应用到源贴图** 都针对项目贴图。该按钮中的“源贴图”指当前 2D Link 项目内部的文件。
 
-- [ ] 我使用 Windows x64。
-- [ ] 我已经本地安装 Adobe Photoshop 桌面版，并理解产品不包含 Photoshop。
-- [ ] 我的 Blender 和 Photoshop 公开版本位于实测矩阵中，或者我接受兼容候选环境。
-- [ ] 安装多个 Photoshop 版本时，我会使用 **Test PS** 确认实际响应的路径和版本。
-- [ ] 我的系统允许所选执行模式需要的自动化功能。
-- [ ] 活动 2D Link 项目会保存在普通本地文件系统中。
-- [ ] 我的资产使用平面矩形图像网格和受支持的文件式贴图。
-- [ ] 项目关联后，我会保持贴图尺寸不变。
-- [ ] 我理解单贴图快速编辑、保存关联 PSD/PSB 和显式 Merge Layers 写回之间的区别。
-- [ ] 我理解可选 JSON 工具只支持有限静态范围。
-- [ ] 我会为生产文件保留独立备份。
-- [ ] 我已经阅读购买平台的支持、更新、退款和账户条款。
+工作流支持 PNG、TGA、JPG 和 JPEG。需要反复编辑和保存时建议使用 PNG 或 TGA。JPG 与 JPEG 使用有损压缩，写回时会额外要求确认。
 
-## 正式发行包、许可证与平台政策
+## Merge Layers 要求
 
-2D Link 正式插件包以 **GPL-3.0-or-later** 分发，并包含对应源码文件和许可证文本。
+执行多贴图写回时：
 
-购买提供的是经过正式测试的发行包，以及销售平台说明的支持或更新服务。本仓库不承诺终身更新、终身支持或未来宿主版本兼容性。
+- 保持生成的 **Brandy | Linked Content**、**Brandy | Merge Layers** 和 **Brandy | Merged Layers** 三个组不变；
+- 不要移动、变换、重新关联或重组生成的智能对象；
+- 将可见绘制图层直接放入 **Brandy | Merge Layers**，不要使用子组；
+- 图层名称必须与 **Brandy | Linked Content** 中的目标完全一致，并区分大小写；
+- Merge Layers 组保持 100% 不透明度，混合模式使用 Normal 或 Pass Through；
+- 写回前先保存关联 PSD/PSB；
+- 每张受影响的项目贴图都必须已保存、尺寸未变，并且在 Photoshop 中为无图层组的单图层文档。
 
-支付、收据、税务或 VAT、下载权限、退款和平台账户问题由实际购买平台处理。退款决定仍以对应平台政策和适用法律为准。
+RGB 8 位目标文档可直接使用。对于受支持的 8 位或 16 位 RGB、灰度、CMYK 或 Lab 文档，Photoshop 可能提示转换为 RGB 8 位；转换可能改变颜色或精度。不支持的颜色模式或位深需要先手动转换。缺少色彩配置或使用非 sRGB 配置时会出现警告，因为 Blender 通常把这些项目贴图解释为 sRGB 输入。
 
-## 独立产品声明
+需要严格控制像素时，尤其是跨重叠部件的柔和透明边缘，直接编辑单张贴图更合适。
 
-2D Link 是独立产品，与 Blender Foundation、Adobe、Unity Technologies、Epic Games、Esoteric Software 或其产品不存在从属、认可、赞助或官方关联关系。
+## 可选 JSON 工具
 
-Blender 是 Blender Foundation 的商标。Adobe 和 Photoshop 是 Adobe 在美国和/或其他国家或地区的注册商标或商标。Unity 是 Unity Technologies 或其关联公司的商标或注册商标。Unreal Engine 是 Epic Games, Inc. 的商标或注册商标。Spine 是 Esoteric Software LLC 的商标。
+JSON 工具是辅助性的静态精灵功能。
+
+- **PhotoshopToSpine 导入** 接受插件定义的静态 PhotoshopToSpine 结构。
+- **PhotoshopToSpine 导出** 从合格的 Blender 精灵面片写出兼容的静态布局。
+- **Spine2D 静态导入** 支持以静态 Region Attachment 为核心的有限 Setup Pose 子集。
+
+这些工具不会导入完整 Spine 骨架或动画。Mesh Attachment、动画时间线、Region Sequence、不支持的约束，以及文档范围之外的数据都会被拒绝，而不会被近似处理。
+
+外部贴图目录默认关闭。只有在信任 JSON 来源，并且其声明的贴图目录确实位于 JSON 目录之外时，才启用 **允许外部贴图目录**。
+
+## 购买前确认
+
+- [ ] 可以使用 Windows x64。
+- [ ] Blender 版本处于 4.2.0–5.1.x。
+- [ ] 本机已安装 Windows 版 Adobe Photoshop 桌面应用。
+- [ ] 资产使用矩形精灵面片和独立本地贴图文件。
+- [ ] 移除 `.001` 类后缀后，部件名称仍然唯一。
+- [ ] 项目能够保存在标准本地磁盘。
+- [ ] 创建项目后可以保持贴图像素尺寸不变。
+- [ ] 保存触发刷新符合你的工作方式。
+- [ ] 不需要通用 3D 投影绘画或完整 Spine 骨架与动画导入。
+
+如果你使用特殊宿主版本、受管控工作站、自定义存储系统或工作室管线，可在购买前发送邮件至 **brandyspe2026@gmail.com**，并清楚说明环境。

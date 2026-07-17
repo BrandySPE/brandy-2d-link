@@ -1,183 +1,111 @@
 # 2D Link 1.6.3 — 快速入门
 
-[产品主页](../README_zh-CN.md) · [用户指南](USER_GUIDE_zh-CN.md) · [兼容性](COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md) · [技术支持](SUPPORT_zh-CN.md)
+[产品主页](../README_zh-CN.md) · [用户指南](USER_GUIDE_zh-CN.md) · [兼容性](COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md) · [技术支持](SUPPORT_zh-CN.md) · [English](QUICK_START.md)
 
-本指南提供 Blender 与 Adobe Photoshop 完成第一次成功往返的最短路径。首次测试请使用资产副本，不要直接使用唯一一份生产文件。
+本指南完成两项首次使用验证：
 
-## 1. 开始前确认
+1. 在 Photoshop 中编辑一张项目贴图，并在 Blender 中刷新；
+2. 将关联 PSD/PSB 中的一张绘制图层写回对应的项目贴图。
+
+第一次测试请使用小型资产的副本。
+
+## 1. 开始前
 
 你需要：
 
 - Windows x64；
 - Blender 4.2.0 至 5.1.x；
-- 支持 JSX 脚本的 Adobe Photoshop 桌面版；
-- 位于本地的 PNG、TGA、JPG 或 JPEG 贴图文件；
-- 由图像贴图平面组成的多部件 2D 资产。
+- Windows 版 Adobe Photoshop 桌面应用；
+- 已保存的 `.blend` 文件；
+- 一个包含图像贴图 2D 部件的 Blender 集合；
+- 位于标准本地磁盘的 PNG、TGA、JPG 或 JPEG 贴图。
 
-2D Link 需要 Adobe Photoshop，但不包含 Photoshop。精确实测版本和完整支持边界见[兼容性与购买检查清单](COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md)。
+第一次测试建议使用 PNG 或 TGA。
 
-最简单的首次测试，是在一个 Blender 集合中放入少量平面矩形部件，并让每个目标部件都有一张明确的本地 Image Texture。需要反复保存时，推荐使用 PNG 或 TGA。
+每个目标部件都必须具有矩形外边界、矩形活动 UV、与其他部件一致的 2D 平面朝向，以及唯一的基础名称。匹配时会忽略 `.001` 之类的 Blender 后缀，因此移除后缀后的名称仍必须唯一。
+
+材质顶层节点树中需要存在文件式 Image Texture。直接连接到 Principled BSDF 的 Base Color 是最清晰的结构。
 
 ## 2. 安装插件
 
-1. 从实际购买 2D Link 的销售平台下载官方 ZIP。
-2. 保持安装包为 ZIP，不要解压。
-3. 在 Blender 中打开 **Edit > Preferences > Get Extensions** 或 **Extensions**，具体名称取决于 Blender 版本。
-4. 打开右上角菜单，选择 **Install from Disk**。
-5. 选择完整官方 ZIP，并启用 **Brandy 2D Link**。
-6. 在 3D View 中按 'N'，打开 **Brandy** 标签。
+1. 保持购买得到的产品 ZIP 完整，不要解压后分别安装文件。
+2. 在 Blender 中打开 **编辑 > 偏好设置 > 获取扩展** 或 **扩展**。
+3. 打开右上角菜单，选择 **从磁盘安装**。
+4. 选择完整的 2D Link ZIP。
+5. 启用 **Brandy 2D Link**。
+6. 在 3D 视图中按 `N`，打开 **Brandy** 标签。
 
-面板标题应显示 **Brandy 2D Link v1.6.3**。不要单独安装 Python 或 JSX 文件。
+面板标题应显示 **Brandy 2D Link v1.6.3**。不要安装 GitHub 仓库 ZIP，也不要单独安装 Python 或 JSX 文件。
 
-## 3. 连接 Adobe Photoshop
+## 3. 连接 Photoshop
 
-1. 在 **Brandy** 标签中展开 **Photoshop Setup**。
-2. 将 **PS Executable** 设置为需要使用的 Photoshop 应用程序。
-3. 正常 Windows 工作流下，将 **PS Execution Mode** 保持为 **Auto**。
-4. 启动已配置的 Photoshop，或点击 **Open PS**。
-5. 等待 Photoshop 完全启动，并关闭欢迎页或其他模态对话框。
-6. 回到 Blender，点击 **Test PS**。
-7. 确认面板显示 **PS connection: Ready** 和预期的 Photoshop 版本。
+1. 展开 **Photoshop 绑定**。
+2. 将 **PS 启动路径** 设置为准备使用的 Photoshop 应用程序。
+3. 启动该 Photoshop 版本，或点击 **打开 PS**。
+4. 等待 Photoshop 完全启动，并关闭所有模态对话框。
+5. 点击 **检测 PS**。
+6. 确认面板显示连接就绪，并显示预期的 Photoshop 路径和版本。
 
-2D Link 不会自动搜索已安装的 Photoshop。安装多个版本时，测试前请关闭其他正在运行的版本。**Test PS** 返回的路径和版本，代表实际响应的 Photoshop 实例。
+安装了多个 Photoshop 版本时，执行 **检测 PS** 前请关闭其他版本。
 
-如果本机安全策略阻止自动脚本，请展开 **Photoshop Settings**，把 **PS Execution Mode** 设为 **Manual Script**，重新执行操作，并按照屏幕提示在 Photoshop 中通过 **File > Scripts > Browse** 运行生成的 JSX 文件。
+## 4. 创建项目
 
-## 4. 准备 Blender 资产
+1. 将 **项目集合** 设置为资产所在集合。
+2. 只有目标部件位于嵌套集合中时，才启用 **包含子集合**。
+3. 在 **项目操作** 中选择 **新建项目到路径**。
+4. 将 **项目包路径** 设置为一个空的本地目录，或一个尚不存在的路径。
+5. 除非关联 PSD/PSB 需要额外透明工作区域，否则保持 **工作画布边距** 默认值。
+6. 点击 **创建（需 PS 正常）**，等待 Blender 与 Photoshop 完成操作。
 
-将同一资产的部件放入一个清晰的 Blender 集合。使用嵌套集合时，启用 **Include Child Collections**。
+2D Link 会把合格贴图复制到项目内，让 Blender 改用这些副本，并创建关联 PSD/PSB。创建项目前使用的贴图文件保持不变。
 
-创建项目前请确认：
+项目创建后，不要单独重命名或移动项目内部文件。每张项目贴图都必须保持当前像素宽度和高度。
 
-- 每张目标贴图已经保存为本地 PNG、TGA、JPG 或 JPEG；
-- 部件使用平面矩形网格、矩形活动 UV 和一致的 2D 朝向；
-- 每个目标部件都有唯一的基础名称；
-- 材质顶层节点树中存在文件式 Image Texture；
-- '.blend' 文件已经保存；
-- 所有需要改变的贴图画布尺寸已在创建项目前调整完成。
+## 5. 完成一次单贴图往返
 
-项目部件匹配会忽略 '.001' 这类 Blender 数字后缀。只要外边界保持矩形，内部网格细分可以存在。
+1. 在 Blender 中将一个目标精灵面片设为活动对象。
+2. 点击 **用 PS 编辑活动贴图**。
+3. 在 Photoshop 中对打开的项目贴图进行一项可见修改。
+4. 保存文件，不要改变文件名、位置、宽度或高度。
+5. 返回 Blender，点击 **手动刷新**。
+6. 确认对象上的贴图已经更新。
 
-项目创建后，请保持每张项目贴图的像素宽高不变。
+这一步验证了直接的 Blender–Photoshop 往返。手动刷新成功后可以启用 **自动刷新**。自动刷新会在检测到项目贴图完成保存后更新 Blender，不会在绘制时逐笔传输。
 
-## 5. 创建项目
+## 6. 准备一次 Merge Layers 写回
 
-1. 将 **Project Collection** 设置为包含资产的集合。
-2. 在 **Project Action** 中选择 **Create a New Project in This Folder**。
-3. 将 **Project Folder** 设置为空的本地文件夹，或尚不存在的路径。
-4. 只有完整关联文档需要额外透明工作区时才设置 **Canvas Padding**。Padding 不会改变单张贴图尺寸。
-5. 点击 **Create Project**。
-6. 任务完成前保持 Blender 和 Photoshop 打开。
-7. 创建失败时查看 **Open Operation Report**。
+1. 在 Blender 中点击 **用 PS 打开关联文档**。
+2. 在 PSD/PSB 中找到三个保留组：
+   - **Brandy | Linked Content**
+   - **Brandy | Merge Layers**
+   - **Brandy | Merged Layers**
+3. 在 **Brandy | Linked Content** 中选择一个目标部件，复制其准确图层名称。
+4. 在 **Brandy | Merge Layers** 内直接创建一张可见绘制图层。
+5. 将绘制图层命名为刚才复制的目标名称。名称区分大小写。
+6. 图层必须直接位于组内，不要放入子组。
+7. 保持 **Brandy | Merge Layers** 为 100% 不透明度，混合模式使用 Normal 或 Pass Through。
+8. 保存 PSD/PSB。
 
-项目创建期间，2D Link 会把合格贴图复制到新项目，重新连接 Blender 到这些项目副本，记录资产与贴图的关系，并创建关联 PSD 或 PSB。
+不要重命名三个保留组，也不要移动、变换、重新关联或重组 **Brandy | Linked Content** 中的生成智能对象。
 
-**Create Project 不会覆盖原始贴图文件。** 项目创建后，该 2D Link 项目内部的贴图文件将用于后续 Blender–Photoshop 往返。
+如果目标项目贴图已经在 Photoshop 中打开，请先保存，并确认它只有一张绘制图层且没有图层组。保持像素尺寸不变。
 
-不要手动重命名或移动生成项目结构中的单个文件。
+## 7. 将绘制内容应用到项目贴图
 
-## 6. 完成一次单贴图快速编辑
+1. 返回 Blender，确认目标项目仍处于活动状态。
+2. 点击 **将 PS 合并组应用到源贴图**。
+3. 如果 Photoshop 显示颜色模式或 JPG/JPEG 提示，请先阅读再决定是否继续。
+4. 等待 Photoshop 与 Blender 全部完成。
+5. 确认 Blender 中的目标项目贴图已经改变。
 
-当一张贴图需要直接修改时，使用这个工作流。
+此命令中的“源贴图”指当前 2D Link 项目内部的贴图文件，不是创建项目前使用的文件。
 
-1. 在 Blender 中将目标精灵网格设为活动对象。
-2. 点击 **Edit Active Object's Texture in PS**。
-3. 在 Photoshop 中绘制并保存，不要改变像素尺寸。
-4. 回到 Blender。
-5. 点击 **Reload Textures**。
+成功写回后，已处理的绘制内容会移入 **Brandy | Merged Layers**，关联文档会保存，Blender 会尝试自动重新载入受影响图像。只有执行报告提示图像未刷新，或 Blender 视图仍未更新时，才需要再次点击 **手动刷新**。
 
-Blender 会重新载入项目图像文件，不会重建材质节点结构。
+需要验证恢复功能时，可在成功写回后立即点击 **撤销上一次合并**。如果受影响的项目文件已不再匹配记录的恢复状态，撤销会被拒绝。
 
-手动刷新正常后，可以在保存前启用 **Auto Reload**。Auto Reload 会在受支持的项目贴图写入稳定后刷新；它不会传输单独的笔刷操作。
+## 8. 操作停止时
 
-## 7. 打开完整资产 PSD/PSB
+阅读提示窗口，以及 **打开执行报告** 中第一个被阻断的条件。修正该条件后重新执行操作。除非面板或报告明确要求，否则不要使用恢复工具，也不要清除项目锁。
 
-需要在完整组装资产的上下文中绘制时，使用这个工作流。
-
-1. 确认当前活动的是正确 2D Link 项目。
-2. 点击 **Open Linked Document in Photoshop**。
-3. 在完整资产可见的情况下绘制。
-4. 工作过程中正常保存 PSD/PSB。
-
-关联文档包含三个保留根组：
-
-- 'Brandy | Linked Content' — 表示项目贴图的关联智能对象；
-- 'Brandy | Merge Layers' — 准备写回的可见作品；
-- 'Brandy | Merged Layers' — 成功写回后存放已处理作品。
-
-不要重命名、移动、复制、替换或重新组织这些保留组。不要移动、旋转、翻转、扭曲或重新链接生成的智能对象。
-
-普通绘画图层、参考和备注可以放在保留组之外。保存 PSD/PSB 只会保存工作文档，不会自动更新所有项目贴图。
-
-## 8. 将作品写回贴图
-
-1. 在 'Brandy | Merge Layers' 中直接创建或粘贴作品图层。
-2. 保持每个作品图层可见。
-3. 将每个图层命名为 'Brandy | Linked Content' 中对应目标的精确名称。
-4. 图层必须直接位于该组内，不要使用子组。
-5. 保持 'Brandy | Merge Layers' 为 100% 不透明度。
-6. 组混合模式使用 **Normal** 或 **Pass Through**。
-7. 保存 PSD/PSB。
-8. 回到 Blender，确认活动项目正确。
-9. 点击 **Apply “Merge Layers” to Source Textures**。
-10. 出现警告时先阅读，再等待 Photoshop 和 Blender 完成任务。
-
-名称匹配区分大小写。最安全的方法是直接从 'Brandy | Linked Content' 复制目标名称。
-
-作品跨越多个部件时，为每个目标复制一份相关作品，并分别使用对应目标名称。写回期间，每个匹配图层会映射到目标贴图，超出目标画布的像素会被裁切。
-
-修改文件前，2D Link 会验证关联文档和目标贴图，并为本次操作涉及的文件建立备份。成功写回后，匹配的项目贴图会更新，已处理作品会移到 'Brandy | Merged Layers'，关联文档会保存，Blender 会尝试刷新受影响图像。
-
-对于严格像素级工作，尤其是重叠部件之间的柔和透明边缘，直接编辑单张贴图仍然最可控。
-
-## 9. 撤销最近一次写回
-
-点击 **Undo Last Merge** 可以恢复最近一次成功的 Merge Layers 操作。
-
-请在继续编辑或保存新变化前使用。只有当前项目文件仍符合 2D Link 记录的恢复状态时，撤销才可用。目标文件再次改变或必要备份缺失时，操作可能被拒绝。
-
-内置备份和撤销属于额外保护，生产文件仍应保留正常备份。
-
-## 10. 常见首次运行问题
-
-### Test PS 失败
-
-- 检查 **PS Executable**。
-- 启动已配置的 Photoshop 版本。
-- 关闭其他正在运行的 Photoshop 版本。
-- 关闭模态对话框，再次执行 **Test PS**。
-- 自动脚本被阻止时使用 **Manual Script**。
-
-### Edit Active Object's Texture in PS 没有打开贴图
-
-- 确认当前项目正确。
-- 将目标网格设为活动对象。
-- 确认项目贴图文件仍然存在。
-- 材质包含多张图像时，确保可以通过直接 Base Color 连接或受支持的导入元数据识别一张主要贴图。
-
-### 保存贴图后 Blender 没有更新
-
-- 确认编辑的是活动项目 'textures' 目录中的贴图。
-- 在保存前启用 Auto Reload，或点击 **Reload Textures**。
-- 确认 Photoshop 没有把文件另存到新名称或新位置。
-- 确认像素尺寸没有改变。
-- 注意保存关联 PSD/PSB 与保存单张贴图是两个不同动作。
-
-### Merge Layers 没有应用
-
-- 先保存 PSD/PSB。
-- 将可见作品图层直接放在 'Brandy | Merge Layers' 中。
-- 移除子组。
-- 从 'Brandy | Linked Content' 复制精确目标名称。
-- 保持目标贴图尺寸不变。
-- 保持 Merge Layers 组为 100% 不透明度，并使用 Normal 或 Pass Through 混合模式。
-
-## 11. 报告、恢复与下一步
-
-操作失败时，展开 **Photoshop Settings**，点击 **Open Operation Report**。最近一次完整报告也会保存到 Blender Text 数据块 'BRANDY_2D_LINK_Last_Report'。
-
-Photoshop 仍可能写入文件时，不要手动删除项目锁、任务状态、备份记录或恢复标记。只有 Operation Report 建议时才使用恢复工具。
-
-项目切换、恢复工具、可选 JSON 工作流、便捷工具和完整支持准备见[用户指南](USER_GUIDE_zh-CN.md)。
-
-分享报告前，请移除私人路径、账户名、项目名、客户名、未公开美术引用、凭据和机密生产信息。
+问题仍无法解决时，请按照[技术支持](SUPPORT_zh-CN.md)页面整理信息，并将已删除隐私内容的报告发送至 **brandyspe2026@gmail.com**。

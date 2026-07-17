@@ -1,92 +1,76 @@
-# 2D Link | Multi-Texture Roundtrip For Blender & Adobe Photoshop
+# 2D Link | Blender 与 Adobe Photoshop 多贴图往返工作流
 
-[English](README.md) · [快速入门](docs/QUICK_START_zh-CN.md) · [用户指南](docs/USER_GUIDE_zh-CN.md) · [兼容性](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md) · [技术支持](docs/SUPPORT_zh-CN.md) · [发行说明](docs/RELEASE_NOTES.md)
+[English](README.md) · [快速入门](docs/QUICK_START_zh-CN.md) · [用户指南](docs/USER_GUIDE_zh-CN.md) · [兼容性](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md) · [技术支持](docs/SUPPORT_zh-CN.md)
 
-**在 Adobe Photoshop 中查看并绘制完整资产，同时让 Blender 继续使用独立贴图。**
+**在 Adobe Photoshop 中绘制完整资产，同时让 Blender 继续使用独立贴图。**
 
-2D Link 是一款 Blender 插件，适用于碎图化角色、模块化精灵图、分层游戏美术和其他多部件 2D 资产。插件支持直接编辑单张项目贴图，也支持通过关联 PSD/PSB 在完整资产中进行绘制。
+2D Link 是一款面向 Windows x64 的 Blender 插件，适用于剪纸角色、模块化精灵图、分层游戏美术和其他多部件 2D 资产。它提供两种明确的 Photoshop 工作方式：直接编辑一张项目贴图，或通过关联 PSD/PSB 查看并绘制完整资产，同时让 Blender 保持各部件贴图彼此独立。
 
-插件在 Blender 内显示为 **Brandy 2D Link**，主要工具位于 3D 视图中的 **Brandy** 侧栏标签中。
+插件在 Blender 中显示为 **Brandy 2D Link**，主要工具位于 3D 视图的 **Brandy** 侧栏标签中。
 
-本仓库是官方公开产品主页和文档中心，不包含可安装的正式发行包。请通过下方官方销售渠道获取完整 ZIP 包。
-
-## 插件工作流展示
-
-- [中文演示与教程](https://www.youtube.com/watch?v=-xTnPTlHHwc)
-- [English Demo & Tutorial](https://www.youtube.com/watch?v=seKdFcPqHf4)
+本仓库是公开的产品主页与文档中心，不是可安装的插件包。可安装版本通过下方销售页面提供，并包含对应的 GPL 授权源代码。
 
 ## 获取 2D Link
 
 - [Superhive](https://superhivemarket.com/products/brandy-2d-link)
 - [itch.io](https://brandyspe.itch.io/brandy-2d-link)
 
-## 两种工作方式
+不要把 GitHub 的仓库 ZIP 安装到 Blender。请使用销售页面提供的完整产品 ZIP。
+
+## 查看工作流
+
+- [中文演示与教程](https://www.youtube.com/watch?v=-xTnPTlHHwc)
+- [English demo and tutorial](https://www.youtube.com/watch?v=seKdFcPqHf4)
+
+## 工作方式
 
 ### 单贴图快速编辑
 
-在 Blender 中选择一个面片对象，可直接用 Adobe Photoshop 打开它的项目贴图。绘制并保存后，通过 **手动刷新** 或保存触发的 **自动刷新** 来刷新 Blender 中的显示。
+在 Blender 中选择一个精灵面片，并用 Adobe Photoshop 打开它的项目贴图。绘制并保存后，通过 **手动刷新** 或保存触发的 **自动刷新** 更新 Blender 中的显示。
 
-该方式适合清理、调色和其他只影响单张贴图的修改。
+该方式适合清理、调色和其他只影响一张贴图的修改。
 
 ### 完整资产绘制
 
-打开包含完整 Blender 资产的关联 PSD/PSB。各部件以关联智能对象显示，绘制时可以同时判断接缝、重叠、对齐和相邻贴图关系。
+打开关联 PSD/PSB 查看组装后的 Blender 资产。每个部件都以关联智能对象显示，因此绘制时可以同时判断接缝、重叠、对齐和相邻贴图关系。
 
-在 Adobe Photoshop 中进行全局绘制后，将名称匹配的图层放入名为 “Brandy | Merge Layers” 的图层组，保存文档，再从 Blender 执行 **将 PS 合并组应用到源贴图**。
+准备写回时，将可见且名称匹配的图层直接放入 **Brandy | Merge Layers**，保存 PSD/PSB，再从 Blender 执行 **将 PS 合并组应用到源贴图**。此命令中的“源贴图”指当前 2D Link 项目内部的贴图文件。
 
-仅保存关联 PSD/PSB 不会自动更新所有贴图。普通文档保存与多贴图写回被设计成了两个独立动作。
+仅保存关联 PSD/PSB 不会自动更新全部贴图。多贴图写回是一个独立、明确的操作。
 
-## 它能提供的帮助
+## 项目文件
 
-- 无需重新连接或重建 Blender 材质就能编辑和刷新项目贴图。
-- 便于在可见的完整资产上进行绘画，更容易对贴图接缝、重叠和相邻部分进行修改。
-- 可一次性修改多个项目贴图，同时支持文档验证、已验证的备份以及撤销上次合并。
+创建项目时，2D Link 会把合格贴图复制到项目目录，并让 Blender 改用这些副本。创建项目前使用的文件保持不变。此后，单贴图编辑、自动刷新和 Merge Layers 写回都针对项目贴图进行。
 
-这些保护用于补充正常的生产流程，不替代备份等安全操作。
+执行多贴图写回前，2D Link 会检查关联文档和目标贴图，并为受影响的文件创建经过验证的备份。只要项目文件仍与记录的恢复状态一致，**撤销上一次合并** 就能恢复最近一次成功写回。
 
-## 适用范围
-
-2D Link 主要面向：
-
-- 剪纸角色和分层动画资产；
-- 模块化精灵和多部件游戏美术；
-- Billboard 图像平面和简单的分层 2.5D 资产；
-- 需要在完整视觉上下文中绘制、同时保持生产贴图独立的画师；
-- 使用明确文件式 Photoshop–Blender 工作流的小型团队。
-
-主工作流要求平面矩形图像网格、矩形活动 UV、一致的 2D 平面朝向、唯一的部件基础名称，以及位于本地文件系统中的 PNG、TGA、JPG 或 JPEG 贴图。
-
-本插件目前注于基于文件的多部件资产 2D 纹理往返操作，不支持通用的 3D 投影绘画、导出到游戏引擎、Photoshop 面板集成，也不支持完整的 Spine 骨架和动画导入。
+这些保护不能替代正常的生产备份或版本管理。
 
 ## 基本要求
 
 - Windows x64
-- Blender 4.2.0 至 5.1.x 安装范围
-- 支持 JSX 脚本的 Adobe Photoshop 桌面版
-- 位于普通本地文件系统中的项目目录
-- 文件式 PNG、TGA、JPG 或 JPEG 贴图
+- Blender 4.2.0 至 5.1.x
+- Windows 版 Adobe Photoshop 桌面应用；无需额外安装 Photoshop 面板或扩展
+- 本地 PNG、TGA、JPG 或 JPEG 贴图文件
+- 位于标准本地磁盘的项目目录
+- 平面矩形图像面片、矩形活动 UV、一致的 2D 平面朝向，以及唯一的部件基础名称
 
-本插件需要在 Windows x64 上使用 Adobe Photoshop 桌面版。Photoshop 网页版、iPad 版、macOS、Linux、非 Adobe 图像编辑器，以及 Beta 或 Nightly 宿主版本都不在 1.6.3 的公开支持范围内。
+该工作流以保存为触发条件，不会把 Photoshop 中的单次笔触实时传输到 Blender。
 
-精确实测版本和购买前检查见[兼容性与购买检查清单](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md)。
+1.6.3 已在 30 组 Blender–Photoshop 版本组合中完成文档所述工作流测试。精确版本、工作流边界和购买前检查见[兼容性与购买检查清单](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md)。
 
-## 验证与测试
+## 文档
 
-1.6.3 Windows x64 正式版使用同一套自动化端到端测试流程，在 6 个 Blender 版本与 5 个 Adobe Photoshop 桌面版组成的 30 个版本组合中完成了实机测试。
-
-每次完整测试均使用一个包含 39 个部件的生产型资产，测试内容包括正式构建校验、资产导入、项目创建、关联 PSD 结构、自动与手动贴图刷新、尺寸不匹配保护、异常状态下的安全写回拒绝、按名称匹配的图层写回、字节级精确恢复的 Undo Last Merge、JSON 导出与导入往返，以及 PNG、TGA 和 JPG 的保存与刷新流程。
-
-此外，测试还选取了 4 组边界版本组合，即最早与最新的 Photoshop 测试版本分别搭配最早与最新的 Blender 测试版本。每个组合执行了 20 次连续的 Photoshop 保存—手动刷新循环，共计 80 次。所有循环均未出现失败，也未检测到几何数据或 Blender 数据块发生漂移。
-
-全部自动化矩阵测试均未发现阻断发布的问题，也未产生报告级警告。测试结果适用于文档所述工作流程、列出的宿主软件版本、Windows x64 平台和本地存储环境。自定义工作室管线、受限制的系统环境、第三方插件、网络存储以及未列出的宿主软件版本，仍应根据实际使用环境单独评估。
-
-## 文档入口
-
-- [快速入门](docs/QUICK_START_zh-CN.md) — 安装和完成第一次成功往返的最短路径。
-- [用户指南](docs/USER_GUIDE_zh-CN.md) — 完整日常工作流、项目管理、可选工具和恢复操作。
-- [兼容性与购买检查清单](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md) — 精确实测版本、环境要求和购买适配检查。
-- [技术支持政策](docs/SUPPORT_zh-CN.md) — 支持范围、问题报告要求、隐私提醒和回复目标。
-- [发行说明](docs/RELEASE_NOTES.md) — 当前发行包说明和保持不变的工作流边界。
+- [快速入门](docs/QUICK_START_zh-CN.md) — 完成一次单贴图往返和一次 Merge Layers 写回。
+- [用户指南](docs/USER_GUIDE_zh-CN.md) — 插件全部功能的详细操作说明。
+- [兼容性与购买检查清单](docs/COMPATIBILITY_AND_PURCHASE_CHECKLIST_zh-CN.md) — 实测版本、系统与资产要求、存储限制和可选 JSON 功能范围。
+- [技术支持](docs/SUPPORT_zh-CN.md) — 如何检查失败操作并提交有效的私密报告。
 - [Superhive FAQ](https://superhivemarket.com/products/brandy-2d-link/faq) — 常见购买前问题的简要说明。
 
-第一次使用时，建议先按照[快速入门](docs/QUICK_START_zh-CN.md)完成一次手动贴图刷新，再启用 Auto Reload 或测试多贴图写回。
+第一次使用时，请从[快速入门](docs/QUICK_START_zh-CN.md)开始。
+
+## 许可证与独立产品声明
+
+插件包采用 GPL-3.0-or-later 许可证发布，并包含对应源代码。
+
+2D Link 是独立产品，与 Adobe、Blender Foundation 及其相关组织不存在隶属或背书关系。商标信息见 [NOTICE.md](NOTICE.md)。
